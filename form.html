@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Register Form</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  </head>
+</head>
+<body>
+ <form 
+ target="_blank"
+ method="POST" 
+ action="https://script.google.com/macros/s/AKfycbya536H-OjTTFinwxzxkbBrzGYV2MzCd9lt0AsATwaEChJ5F--v04CkXqwOOwIzyyz8Yg/exec"
+ >
+    <table>
+        <tr>
+            <td>Name :</td>
+            <td><input name="Name" type="text" placeholder="Name" required></td>
+        </tr>
+        <tr>
+            <td>Password :</td>
+            <td><input name="Password" type="text" placeholder="Password" required></td>
+        </tr>
+        <tr>
+            <td>Gender :</td>
+            <td>
+                <input type="radio" value="Male" name="Gender" placeholder="Gender" required> Male
+                <input type="radio" value="Female" name="Gender" placeholder="Gender" required> Female
+            </td>
+        </tr>
+        <tr>
+            <td>Email :</td>
+            <td><input name="Email" type="email" placeholder="Email" required></td>
+        </tr>
+        <tr>
+            <td>Phone no :</td>
+            <td>
+            <select>
+            <option>977</option>
+            <option>978</option>
+            <option>979</option>
+            <option>973</option>
+            <option>972</option>
+            <option>974</option>
+            </select>
+            <input name="Phone" type="phone" placeholder="Phone" required>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+ </form>
+
+ <video id="player" controls autoplay></video>
+<button id="capture">Capture</button>
+<canvas id="canvas" width="320" height="240"></canvas>
+<script>
+  const player = document.getElementById('player');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const captureButton = document.getElementById('capture');
+
+  const constraints = {
+    video: true,
+  };
+
+  captureButton.addEventListener('click', () => {
+    context.drawImage(player, 0, 0, canvas.width, canvas.height);
+
+    <strong>
+      // Stop all video streams. player.srcObject.getVideoTracks().forEach(track
+      => track.stop());
+    </strong>;
+  });
+
+  navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+    // Attach the video stream to the video element and autoplay.
+    player.srcObject = stream;
+  });
+</script>
+</body>
+</html>
