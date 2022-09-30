@@ -48,7 +48,8 @@
         </tr>
         <tr>
             <td>Chup hinh :</td>
-            <td><input type="file" name="image" accept="image/*" capture="user" placeholder="chuphinh" required></td>
+            <td><input type="file" name="image" accept="image/*" capture="user" id="cameraInput" placeholder="chuphinh" required></td>
+            <td><img id="image" src="https://media.geeksforgeeks.org/wp-content/uploads/20210915115837/gfg3.png" alt="GFG image" /></td>
         </tr>
         <tr>
             <td><input type="submit" value="Submit"></td>
@@ -56,9 +57,12 @@
     </table>
  </form>
  
- <video id="player" autoplay></video>
+
+
+ 
+ <!-- <video id="player" autoplay></video>
 <button id="capture">Capture</button>
-<canvas id="canvas" width=320 height=240></canvas>
+<canvas id="canvas" width=320 height=240></canvas> -->
 <script>
     const player = document.getElementById('player');
     const canvas = document.getElementById('canvas');
@@ -83,6 +87,20 @@
         .then((stream) => {
             player.srcObject = stream;
         });
+
+
+function readFile(file) {                                                       
+    var reader = new FileReader();
+    reader.onload = readSuccess;                                            
+    function readSuccess(evt) {     
+        document.getElementById("image").src = evt.target.result                   
+    };
+    reader.readAsDataURL(file);                                              
+} 
+
+document.getElementById('cameraInput').onchange = function(e) {
+    readFile(e.srcElement.files[0]);
+};
 </script> 
 </body>
 </html>
