@@ -49,7 +49,7 @@
         <tr>
             <td>Chup hinh :</td>
             <td><input type="file" name="image" accept="image/*" capture="user" id="cameraInput" placeholder="chuphinh" required></td>
-            <td><img id="image" src="https://media.geeksforgeeks.org/wp-content/uploads/20210915115837/gfg3.png" /></td>
+            <td><img id="image"/></td>
         </tr>
         <tr>
             <td><input type="submit" value="Submit"></td>
@@ -64,29 +64,29 @@
 <button id="capture">Capture</button>
 <canvas id="canvas" width=320 height=240></canvas> -->
 <script>
-    const player = document.getElementById('player');
-    const canvas = document.getElementById('canvas');
-    const context = canvas.getContext('2d');
-    const captureButton = document.getElementById('capture');
+    // const player = document.getElementById('player');
+    // const canvas = document.getElementById('canvas');
+    // const context = canvas.getContext('2d');
+    // const captureButton = document.getElementById('capture');
 
-    const constraints = {
-        audio: true,
-        video:
-        {
-            facingMode: { exact: "environment" }
-        }
-    };
+    // const constraints = {
+    //     audio: true,
+    //     video:
+    //     {
+    //         facingMode: { exact: "environment" }
+    //     }
+    // };
 
-    captureButton.addEventListener('click', () => {
-        // Draw the video frame to the canvas.
-        context.drawImage(player, 0, 0, canvas.width, canvas.height);
-    });
+    // captureButton.addEventListener('click', () => {
+    //     // Draw the video frame to the canvas.
+    //     context.drawImage(player, 0, 0, canvas.width, canvas.height);
+    // });
 
-    // Attach the video stream to the video element and autoplay.
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then((stream) => {
-            player.srcObject = stream;
-        });
+    // // Attach the video stream to the video element and autoplay.
+    // navigator.mediaDevices.getUserMedia(constraints)
+    //     .then((stream) => {
+    //         player.srcObject = stream;
+    //     });
 
 
 function readFile(file) {                                                       
