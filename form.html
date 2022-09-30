@@ -50,20 +50,7 @@
         </tr>
     </table>
  </form>
-
- <video id="video" width="640" height="480" autoplay></video>
- <script>
-    var video = document.getElementById('video');
-    
-    navigator.mediaDevices.getUserMedia(constraints)
-    
-        .then(function(stream) {
-          video.srcObject = stream;
-          video.play();
-        })
-        .catch(function(err) {
-          console.log("An error has occured: " + err);
-        });
-      </script>
+ <input type="file" name="image" accept="image/*" capture="user">
+ 
 </body>
 </html>
