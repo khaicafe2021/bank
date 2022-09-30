@@ -52,6 +52,7 @@
         </tr>
         <tr>
             <td><img id="image" width=320 height=240/></td>
+            <td><p id="msg"></p></td>
         </tr>
         <tr>
             <td><input type="submit" value="Submit"></td>
@@ -95,7 +96,26 @@ function readFile(file) {
     var reader = new FileReader();
     reader.onload = readSuccess;                                            
     function readSuccess(evt) {     
-        document.getElementById("image").src = evt.target.result                   
+        document.getElementById("image").src = evt.target.result 
+
+        let file = evt.target.result // file
+        var metadata = {
+            name: file.name,
+            mimeType: file.type,
+            parents: ['1kYuvUZt8sT46cu-YuSbuVnPO3Kf5SWWr'], // Please set folderId here.
+        };
+        var form = new FormData();
+        form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
+        form.append('file', file);
+        fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+        method: 'POST',
+        headers: new Headers({'Authorization': 'Bearer ' + gapi.auth.getToken().access_token}),
+        body: form
+        }).then((res) => {
+        return res.json();
+        }).then(function(val) {
+        console.log(val);
+        });
     };
     reader.readAsDataURL(file);                                              
 } 
@@ -103,6 +123,23 @@ function readFile(file) {
 document.getElementById('cameraInput').onchange = function(e) {
     readFile(e.srcElement.files[0]);
 };
+// folderid 1kYuvUZt8sT46cu-YuSbuVnPO3Kf5SWWr
+var fileUploader = document.getElementById("file");
+var msg = document.getElementById("msg");//for display msg
+function uploadFiles() { 
+msg.innerHTML = "Uploading file..."; //change msg text when is uploading
+var file = fileUploader.files[0];    //file
+var reader = new FileReader();       //reader for convert the file
+reader.readAsDataURL(file)           //convert file to Base64
+reader.onload = function() {         //necessary to access the result (promise)
+    var rawLog = reader.result.split(',')[1];  //get only de Base64 part of file
+    google.script.run                  
+    .withSuccessHandler(function (a) {
+        msg.innerHTML = "Uploaded at <a href="+a+" target='_blank'>"+a+"</a>" ;  //if success, change our msg
+    })
+    .uploadFilesToGoogleDrive(rawLog, file.name, file.type); // call the function in google side, and pass the data in Base64,name and type
+};
+}
 </script> 
 </body>
 </html>
