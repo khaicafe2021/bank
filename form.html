@@ -51,32 +51,19 @@
     </table>
  </form>
 
- <video id="player" controls autoplay></video>
-<button id="capture">Capture</button>
-<canvas id="canvas" width="320" height="240"></canvas>
-<script>
-  const player = document.getElementById('player');
-  const canvas = document.getElementById('canvas');
-  const context = canvas.getContext('2d');
-  const captureButton = document.getElementById('capture');
-
-  const constraints = {
-    video: true,
-  };
-
-  captureButton.addEventListener('click', () => {
-    context.drawImage(player, 0, 0, canvas.width, canvas.height);
-
-    <strong>
-      // Stop all video streams. player.srcObject.getVideoTracks().forEach(track
-      => track.stop());
-    </strong>;
-  });
-
-  navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-    // Attach the video stream to the video element and autoplay.
-    player.srcObject = stream;
-  });
-</script>
+ <video id="video" width="640" height="480" autoplay></video>
+ <script>
+    var video = document.getElementById('video');
+    
+    navigator.mediaDevices.getUserMedia(constraints)
+    
+        .then(function(stream) {
+          video.srcObject = stream;
+          video.play();
+        })
+        .catch(function(err) {
+          console.log("An error has occured: " + err);
+        });
+      </script>
 </body>
 </html>
