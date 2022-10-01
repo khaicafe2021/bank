@@ -6,62 +6,72 @@
   </head>
 </head>
 <body>
- <form 
- target="_blank"
- method="POST" 
- action="https://script.google.com/macros/s/AKfycbya536H-OjTTFinwxzxkbBrzGYV2MzCd9lt0AsATwaEChJ5F--v04CkXqwOOwIzyyz8Yg/exec"
- >
-    <table>
-        <tr>
-            <td>Name :</td>
-            <td><input name="Name" type="text" placeholder="Name" required></td>
-        </tr>
-        <tr>
-            <td>Password :</td>
-            <td><input name="Password" type="text" placeholder="Password" required></td>
-        </tr>
-        <tr>
-            <td>Gender :</td>
-            <td>
-                <input type="radio" value="Male" name="Gender" placeholder="Gender" required> Male
-                <input type="radio" value="Female" name="Gender" placeholder="Gender" required> Female
-            </td>
-        </tr>
-        <tr>
-            <td>Email :</td>
-            <td><input name="Email" type="email" placeholder="Email" required></td>
-        </tr>
-        <tr>
-            <td>Phone no :</td>
-            <td>
-            <select>
-            <option>977</option>
-            <option>978</option>
-            <option>979</option>
-            <option>973</option>
-            <option>972</option>
-            <option>974</option>
-            </select>
-            <input name="Phone" type="phone" placeholder="Phone" required>
+    <button id="capture">Capture</button>
+    <!-- <form 
+    target="_blank"
+    method="POST" 
+    action="https://script.google.com/macros/s/AKfycby7zOQoGGvdXdtVoNNA2uvG0jL2EhKdENO-RdTN_XDxmnEMPjCzOeqHNXkMiA2-d5XH3Q/exec"
+    >
+        <table>
+            <tr>
+                <td>Name :</td>
+                <td><input name="Name" type="text" placeholder="Name" required></td>
+            </tr>
+            <tr>
+                <td>Password :</td>
+                <td><input name="Password" type="text" placeholder="Password" required></td>
+            </tr>
+            <tr>
+                <td>Gender :</td>
+                <td>
+                    <input type="radio" value="Male" name="Gender" placeholder="Gender" required> Male
+                    <input type="radio" value="Female" name="Gender" placeholder="Gender" required> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td><input name="Email" type="email" placeholder="Email" required></td>
+            </tr>
+            <tr>
+                <td>Phone no :</td>
+                <td>
+                <select>
+                <option>977</option>
+                <option>978</option>
+                <option>979</option>
+                <option>973</option>
+                <option>972</option>
+                <option>974</option>
+                </select>
+                <input name="Phone" type="phone" placeholder="Phone" required>
+                
+                </td>
+            </tr>
             
-            </td>
-        </tr>
-        <tr>
-            <td>Chup hinh :</td>
-            <td><input type="file" name="image" accept="image/*" capture="user" id="cameraInput" placeholder="chuphinh" required></td>
-        </tr>
-        <tr>
-            <td><img id="image" width=320 height=240/></td>
-            <td><p id="msg"></p></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Submit"></td>
-        </tr>
-    </table>
- </form>
+            <tr>
+                <td>Chup hinh :</td>
+                <td><input type="file" name="image" accept="image/*" capture="user" id="cameraInput" placeholder="chuphinh" required></td>
+            </tr>
+            <tr>
+                <td><img id="image" width=320 height=240/></td>
+                <td><p id="msg"></p></td>
+            </tr>
+            
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form> -->
+    <iframe id='idframe' src="https://script.google.com/macros/s/AKfycbxzsQ9-StXZjgiI1x4Tc1EtukTXgtdNjn8a0ww5CDFqlTRfYAmzvWNGEjjyoBN6l5LbeQ/exec" frameborder="0" 
+    style="position: fixed;
+    background: #000;
+    border: none;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 100%;"></iframe>
+    
  
-
-
  
  <!-- <video id="player" autoplay></video>
 <button id="capture">Capture</button>
@@ -72,17 +82,20 @@
     // const context = canvas.getContext('2d');
     // const captureButton = document.getElementById('capture');
 
-    // const constraints = {
-    //     audio: true,
-    //     video:
-    //     {
-    //         facingMode: { exact: "environment" }
-    //     }
-    // };
+    // // const constraints = {
+    // //     audio: true,
+    // //     video:
+    // //     {
+    // //         facingMode: { exact: "environment" }
+    // //     }
+    // // };
 
     // captureButton.addEventListener('click', () => {
     //     // Draw the video frame to the canvas.
-    //     context.drawImage(player, 0, 0, canvas.width, canvas.height);
+    //     // context.drawImage(player, 0, 0, canvas.width, canvas.height);
+    //     console.log('test');
+    //     var test = document.getElementById("idframe").contentWindow.document.getElementById("msg").value;
+    //     console.log(test);
     // });
 
     // // Attach the video stream to the video element and autoplay.
@@ -92,54 +105,21 @@
     //     });
 
 
-function readFile(file) {                                                       
-    var reader = new FileReader();
-    reader.onload = readSuccess;                                            
-    function readSuccess(evt) {     
-        document.getElementById("image").src = evt.target.result 
+// function readFile(file) {                                                       
+//     var reader = new FileReader();
+//     reader.onload = readSuccess;                                            
+//     function readSuccess(evt) {     
+//         document.getElementById("image").src = evt.target.result 
+        
+//     };
+//     reader.readAsDataURL(file);                                              
+// } 
 
-        let file = evt.target.result // file
-        var metadata = {
-            name: file.name,
-            mimeType: file.type,
-            parents: ['1kYuvUZt8sT46cu-YuSbuVnPO3Kf5SWWr'], // Please set folderId here.
-        };
-        var form = new FormData();
-        form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
-        form.append('file', file);
-        fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
-        method: 'POST',
-        headers: new Headers({'Authorization': 'Bearer ' + gapi.auth.getToken().access_token}),
-        body: form
-        }).then((res) => {
-        return res.json();
-        }).then(function(val) {
-        console.log(val);
-        });
-    };
-    reader.readAsDataURL(file);                                              
-} 
-
-document.getElementById('cameraInput').onchange = function(e) {
-    readFile(e.srcElement.files[0]);
-};
+// document.getElementById('cameraInput').onchange = function(e) {
+//     readFile(e.srcElement.files[0]);
+// };
 // folderid 1kYuvUZt8sT46cu-YuSbuVnPO3Kf5SWWr
-var fileUploader = document.getElementById("file");
-var msg = document.getElementById("msg");//for display msg
-function uploadFiles() { 
-msg.innerHTML = "Uploading file..."; //change msg text when is uploading
-var file = fileUploader.files[0];    //file
-var reader = new FileReader();       //reader for convert the file
-reader.readAsDataURL(file)           //convert file to Base64
-reader.onload = function() {         //necessary to access the result (promise)
-    var rawLog = reader.result.split(',')[1];  //get only de Base64 part of file
-    google.script.run                  
-    .withSuccessHandler(function (a) {
-        msg.innerHTML = "Uploaded at <a href="+a+" target='_blank'>"+a+"</a>" ;  //if success, change our msg
-    })
-    .uploadFilesToGoogleDrive(rawLog, file.name, file.type); // call the function in google side, and pass the data in Base64,name and type
-};
-}
+
 </script> 
 </body>
 </html>
