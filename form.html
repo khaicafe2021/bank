@@ -280,7 +280,50 @@
                     <label>Tên chủ tài khoản</label>
                     <input type="text" class="input">
                  </div> 
-                
+                 <div class="inputfield">
+                    <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
+                    <label class="btn" for="file1" style="text-align: center;">Chụp Hình CCCD Mặt Trước</label>
+                </div>
+                <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file1" accept="image/*" capture="user" placeholder="chuphinh"/>
+                <div class="inputfield">
+                    <img id="imagefile1" style="width: 100%; height: 240; text-align: center;"/>               
+                </div>
+
+                <div class="inputfield">
+                    <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
+                    <label class="btn" for="file2" style="text-align: center;">Chụp Hình CCCD Mặt Sau</label>
+                </div>
+                <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file2" accept="image/*" capture="user" placeholder="chuphinh"/>
+                <div class="inputfield">
+                    <img id="imagefile2" style="width: 100%; height: 240; text-align: center;"/>               
+                </div>
+
+                <div class="inputfield">
+                    <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
+                    <label class="btn" for="file3" style="text-align: center;">Chụp Hình CCCD Mặt Trước</label>
+                </div>
+                <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file3" accept="image/*" capture="user" placeholder="chuphinh"/>
+                <div class="inputfield">
+                    <img id="imagefile3" style="width: 100%; height: 240; text-align: center;"/>               
+                </div>
+
+                <div class="inputfield">
+                    <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
+                    <label class="btn" for="file4" style="text-align: center;">Chụp Hình CCCD Mặt Trước</label>
+                </div>
+                <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file4" accept="image/*" capture="user" placeholder="chuphinh"/>
+                <div class="inputfield">
+                    <img id="imagefile4" style="width: 100%; height: 240; text-align: center;"/>               
+                </div>
+
+                <div class="inputfield">
+                    <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
+                    <label class="btn" for="file5" style="text-align: center;">Chụp Hình CCCD Mặt Trước</label>
+                </div>
+                <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file5" accept="image/*" capture="user" placeholder="chuphinh"/>
+                <div class="inputfield">
+                    <img id="imagefile5" style="width: 100%; height: 240; text-align: center;"/>               
+                </div>
 
 
                <div class="inputfield terms">
@@ -306,13 +349,31 @@
         $(document).ready(function() {
             $('input[type="file"]').change(function(e) {
                 var geekss = e.target.files[0].name;
-                console.log(this.parentNode.parentNode.parentNode.parentNode.parentNode)
-                $("h4").text(geekss + ' kkkkk day la file mới chon.');
-                readFile(e.target.files[0]);
-                // google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode.parentNode.parentNode.parentNode.parentNode)
+                console.log((this.id))
+                
+                readFile(this.id, e.target.files[0]);
                 
             });
         });
+        
+        
+
+        function readFile(id,file) {                                                       
+          var reader = new FileReader();
+          reader.onload = readSuccess;                                            
+          function readSuccess(evt) {     
+              var imageData = reader.result;
+              document.getElementById("image"+id).src = imageData            
+            };
+          reader.readAsDataURL(file);                                
+          } 
+      
+        function onSuccess(data){
+          document.getElementById("resp").value = data;
+          // document.getElementById('resp').innerHTML = data;
+        }
+
+
         
         var $form = $('form#test-form'),
             url = 'https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec'
@@ -334,38 +395,7 @@
             // )
         })
 
-        function readFile(file) {                                                       
-          var reader = new FileReader();
-          reader.onload = readSuccess;                                            
-          function readSuccess(evt) {     
-              var imageData = reader.result;
-              document.getElementById("image").src = imageData            
-            };
-          reader.readAsDataURL(file);                                
-          } 
-      // document.getElementById('cameraInput').onchange = function(e) {
-      //     readFile(e.srcElement.files[0]);
-          
-      //      };  
-
-        
-        
-        // document.getElementById('submitBtn').addEventListener('click',
-        //   function(e){
-        //     e.preventDefault();
-        //     console.log(this.parentNode.parentNode.parentNode.parentNode.parentNode);
-        //     google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode.parentNode.parentNode.parentNode.parentNode)
-        //     // (this.parentNode.Phone.value);
-        //   })
-            
-        function onSuccess(data){
-          document.getElementById("resp").value = data;
-          // document.getElementById('resp').innerHTML = data;
-        }
-
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
+       
     </script>    
 </body>
 </html>
