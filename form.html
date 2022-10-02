@@ -1,125 +1,373 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  <title>Register Form</title>
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-  </head>
-</head>
-<body>
-    <button id="capture">Capture</button>
-    <!-- <form 
-    target="_blank"
-    method="POST" 
-    action="https://script.google.com/macros/s/AKfycby7zOQoGGvdXdtVoNNA2uvG0jL2EhKdENO-RdTN_XDxmnEMPjCzOeqHNXkMiA2-d5XH3Q/exec"
-    >
-        <table>
-            <tr>
-                <td>Name :</td>
-                <td><input name="Name" type="text" placeholder="Name" required></td>
-            </tr>
-            <tr>
-                <td>Password :</td>
-                <td><input name="Password" type="text" placeholder="Password" required></td>
-            </tr>
-            <tr>
-                <td>Gender :</td>
-                <td>
-                    <input type="radio" value="Male" name="Gender" placeholder="Gender" required> Male
-                    <input type="radio" value="Female" name="Gender" placeholder="Gender" required> Female
-                </td>
-            </tr>
-            <tr>
-                <td>Email :</td>
-                <td><input name="Email" type="email" placeholder="Email" required></td>
-            </tr>
-            <tr>
-                <td>Phone no :</td>
-                <td>
-                <select>
-                <option>977</option>
-                <option>978</option>
-                <option>979</option>
-                <option>973</option>
-                <option>972</option>
-                <option>974</option>
-                </select>
-                <input name="Phone" type="phone" placeholder="Phone" required>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test sumbit form Google sheet</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="title">
+            1. THÔNG TIN KHÁCH HÀNG VAY
+        </div>
+        <form id="test-forma" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                   <label>Họ tên</label>
+                   <input type="text" class="input">
+                </div>  
+                 <div class="inputfield">
+                   <label>Giới tính</label>
+                   <div class="custom_select">
+                        <select>
+                            <option value="">Chọn</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Nam">Nam</option>
+                        </select>
+                    </div>
+                </div>  
+                <div class="inputfield">
+                   <label>Ngày sinh</label>
+                   <input type="text" class="input">
+                </div>  
+               <div class="inputfield">
+                   <label>CMND/ CCCD</label>
+                   <input type="text" class="input">
+                </div> 
+                <div class="inputfield">
+                    <label>CMND cũ ( nếu có )</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                   <label>Tình trạng hôn nhân</label>
+                   <div class="custom_select">
+                     <select>
+                       <option value="">Chọn</option>
+                       <option value="Độc thân">Độc thân</option>
+                       <option value="Đã lập gia đình">Đã lập gia đình</option>
+                       <option value="Góa">Góa</option>
+                       <option value="Li dị">Li dị</option>
+                       <option value="Khác">Khác</option>
+                     </select>
+                   </div>
+                </div>
+                <div class="inputfield">
+                    <label>Trình độ học vấn</label>
+                    <div class="custom_select">
+                      <select>
+                        <option value="">Chọn</option>
+                        <option value="Tiểu học">Tiểu học</option>
+                        <option value="THCS">THCS</option>
+                        <option value="PTTH">PTTH</option>
+                        <option value="Trung cấp">Trung cấp</option>
+                        <option value="Cao Đẳng">Cao Đẳng</option>
+                        <option value="Đại học">Đại học</option>
+                        <option value="Khác">Khác</option>
+                      </select>
+                    </div>
+                 </div> 
+                 <div class="inputfield">
+                    <label>Điện thoại</label>
+                    <div class="custom_select">
+                      <select>
+                        <option value="">Chọn</option>
+                        <option value="Có chính chủ">Có chính chủ</option>
+                        <option value="Có chính chủ">Không chính chủ</option>
+                      </select>
+                    </div>
+                 </div> 
+                 <div class="title">
+                    2.THÔNG TIN CƯ TRÚ
+                </div>
+                 <div class="inputfield">
+                   <label>Địa chỉ nơi ở hiện tại</label>
+                   <input type="text" class="input">
+                </div> 
+               <div class="inputfield">
+                   <label>Thời gian sinh sống</label>
+                   <input type="text" class="input">
+                </div> 
+               <div class="inputfield">
+                   <label>Đối với khách thuê trọ ( cung cấp số phòng, tên chủ nhà )</label>
+                   <!-- <textarea class="textarea"></textarea> -->
+                   <input type="text" class="input">
+                </div> 
+               <div class="inputfield">
+                   <label>Địa chỉ hộ khẩu ( thường trú )</label>
+                   <input type="text" class="input">
+                </div> 
+                <div class="title">
+                    3. THÔNG TIN ĐỀ NGHỊ VAY VỐN
+                </div>
+                <div class="inputfield">
+                    <label>Mục đích vay </label>
+                    <div class="custom_select">
+                      <select>
+                        <option value="">Chọn</option>
+                        <option value="Sửa nhà">Sửa nhà</option>
+                        <option value="Mua sắm tiêu dùng">Mua sắm tiêu dùng</option>
+                        <option value="Khác">Khác</option>
+                      </select>
+                    </div>
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số tiền đề nghị vay</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Thời gian góp</label>
+                    <div class="custom_select">
+                      <select>
+                        <option value="">Chọn</option>
+                        <option value="12 Tháng">12 Tháng</option>
+                        <option value="24 Tháng">24 Tháng</option>
+                        <option value="36 Tháng">36 Tháng</option>
+                      </select>
+                    </div>
+                 </div> 
+                 <div class="inputfield">
+                    <label>Nguồn thu nhập</label>
+                    <div class="custom_select">
+                      <select>
+                        <option value="">Chọn</option>
+                        <option value="Từ lương">Từ lương</option>
+                        <option value="Từ kinh doanh">Từ kinh doanh</option>
+                        <option value="Khác">Khác</option>
+                      </select>
+                    </div>
+                 </div>
+                 <div class="inputfield">
+                    <label>Tên công ty/nơi kinh doanh/ làm việc</label>
+                    <input type="text" class="input">
+                 </div>  
+                 <div class="inputfield">
+                    <label>Địa chỉ</label>
+                    <input type="text" class="input">
+                 </div>  
+                 <div class="inputfield">
+                    <label>Thời gian làm việc </label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Tổng thu nhập </label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Vị trí </label>
+                    <div class="custom_select">
+                      <select>
+                        <option value="">Chọn</option>
+                        <option value="Nhân viên">Nhân viên</option>
+                        <option value="Công nhân">Công nhân</option>
+                        <option value="Chủ">Chủ</option>
+                        <option value="Khác">Khác</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="title">
+                    4. THÔNG TIN THAM CHIẾU ( được yêu cầu bảo mật ) 
+                </div>
+                <div style="padding-bottom: 5px;">
+                    <label>4.1 Thông tin vợ / chồng ( nếu có ) </label>
+                 </div> 
+                 <div class="inputfield">
+                    <label>Họ tên : </label>
+                    <input type="text" class="input">
+                    <div style="padding-left: 5px;"class="custom_select">
+                        <select>
+                          <option value="">Chọn</option>
+                          <option value="Có bảo mật">Có bảo mật</option>
+                          <option value="Không bảo mật">Không bảo mật</option>
+                        </select>
+                    </div>
+                 </div> 
+                 
+                 <div class="inputfield">
+                    <label>Ngày sinh</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số CMND</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số điện thoại</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div style="padding-bottom: 5px;">
+                    <label>4.2 Thông tin người thân </label>
+                 </div> 
+                 <div class="inputfield">
+                    <label>Họ tên : </label>
+                    <input type="text" class="input">
+                    <div style="padding-left: 5px;" class="custom_select">
+                        <select>
+                          <option value="">Chọn</option>
+                          <option value="Có bảo mật">Có bảo mật</option>
+                          <option value="Không bảo mật">Không bảo mật</option>
+                        </select>
+                    </div>
+                 </div> 
+                 
+                 <div class="inputfield">
+                    <label>Ngày sinh</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số CMND</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số điện thoại</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div style="padding-bottom: 5px;">
+                    <label>4.3 Thông tin bạn bè/đồng nghiệp</label>
+                 </div> 
+                 <div class="inputfield">
+                    <label>Họ tên : </label>
+                    <input type="text" class="input">
+                    <div style="padding-left: 5px;"class="custom_select">
+                        <select>
+                          <option value="">Chọn</option>
+                          <option value="Có bảo mật">Có bảo mật</option>
+                          <option value="Không bảo mật">Không bảo mật</option>
+                        </select>
+                    </div>
+                 </div> 
+                 
+                 <div class="inputfield">
+                    <label>Ngày sinh</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số CMND</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số điện thoại</label>
+                    <input type="text" class="input">
+                 </div> 
+
+                <div class="title">
+                    5. THÔNG TIN ĐĂNG KÝ GIẢI NGÂN 
+                </div>
+                <div class="inputfield">
+                    <div class="custom_select">
+                        <select>
+                        <option value="">Chọn</option>
+                        <option value="Tiền mặt">Tiền mặt</option>
+                        <option value="chuyển khoản">chuyển khoản</option>
+                        </select>
+                    </div>
+                 </div>
+                <div class="inputfield">
+                    <label>Ngân hàng</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Chi nhánh</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Số tài khoản</label>
+                    <input type="text" class="input">
+                 </div> 
+                 <div class="inputfield">
+                    <label>Tên chủ tài khoản</label>
+                    <input type="text" class="input">
+                 </div> 
                 
-                </td>
-            </tr>
-            
-            <tr>
-                <td>Chup hinh :</td>
-                <td><input type="file" name="image" accept="image/*" capture="user" id="cameraInput" placeholder="chuphinh" required></td>
-            </tr>
-            <tr>
-                <td><img id="image" width=320 height=240/></td>
-                <td><p id="msg"></p></td>
-            </tr>
-            
-            <tr>
-                <td><input type="submit" value="Submit"></td>
-            </tr>
-        </table>
-    </form> -->
-    <iframe id='idframe' src="https://script.google.com/macros/s/AKfycbxzsQ9-StXZjgiI1x4Tc1EtukTXgtdNjn8a0ww5CDFqlTRfYAmzvWNGEjjyoBN6l5LbeQ/exec" frameborder="0" 
-    style="position: fixed;
-    background: #000;
-    border: none;
-    top: 0; right: 0;
-    bottom: 0; left: 0;
-    width: 100%;
-    height: 100%;"></iframe>
+
+
+               <div class="inputfield terms">
+                   <label class="check">
+                     <input type="checkbox">
+                     <span class="checkmark"></span>
+                   </label>
+                   <p>Agreed to terms and conditions</p>
+                </div> 
+               <div class="inputfield">
+                 <input type="submit" value="Register" class="btn">
+               </div>
+             </div>
+        </form>
+    </div>	
     
- 
- 
- <!-- <video id="player" autoplay></video>
-<button id="capture">Capture</button>
-<canvas id="canvas" width=320 height=240></canvas> -->
-<script>
-    // const player = document.getElementById('player');
-    // const canvas = document.getElementById('canvas');
-    // const context = canvas.getContext('2d');
-    // const captureButton = document.getElementById('capture');
-
-    // // const constraints = {
-    // //     audio: true,
-    // //     video:
-    // //     {
-    // //         facingMode: { exact: "environment" }
-    // //     }
-    // // };
-
-    // captureButton.addEventListener('click', () => {
-    //     // Draw the video frame to the canvas.
-    //     // context.drawImage(player, 0, 0, canvas.width, canvas.height);
-    //     console.log('test');
-    //     var test = document.getElementById("idframe").contentWindow.document.getElementById("msg").value;
-    //     console.log(test);
-    // });
-
-    // // Attach the video stream to the video element and autoplay.
-    // navigator.mediaDevices.getUserMedia(constraints)
-    //     .then((stream) => {
-    //         player.srcObject = stream;
-    //     });
 
 
-// function readFile(file) {                                                       
-//     var reader = new FileReader();
-//     reader.onload = readSuccess;                                            
-//     function readSuccess(evt) {     
-//         document.getElementById("image").src = evt.target.result 
+    
+   
+
+    <script>
+        $(document).ready(function() {
+            $('input[type="file"]').change(function(e) {
+                var geekss = e.target.files[0].name;
+                console.log(this.parentNode.parentNode.parentNode.parentNode.parentNode)
+                $("h4").text(geekss + ' kkkkk day la file mới chon.');
+                readFile(e.target.files[0]);
+                // google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode.parentNode.parentNode.parentNode.parentNode)
+                
+            });
+        });
         
-//     };
-//     reader.readAsDataURL(file);                                              
-// } 
+        var $form = $('form#test-form'),
+            url = 'https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec'
+        
+        $('#submit-form').on('click', function(e) {
+              e.preventDefault();
+            var jqxhr = $.ajax({
+                url: url,
+                method: "POST",
+                dataType: "json",
+                data: $form.serialize(),
+                success : function(data) {
+                    console.log(data);
+                    alert("Gửi form thành công");
+                }
+            })
+            // .success(
+            //       alert("Gửi form thành công")
+            // )
+        })
 
-// document.getElementById('cameraInput').onchange = function(e) {
-//     readFile(e.srcElement.files[0]);
-// };
-// folderid 1kYuvUZt8sT46cu-YuSbuVnPO3Kf5SWWr
+        function readFile(file) {                                                       
+          var reader = new FileReader();
+          reader.onload = readSuccess;                                            
+          function readSuccess(evt) {     
+              var imageData = reader.result;
+              document.getElementById("image").src = imageData            
+            };
+          reader.readAsDataURL(file);                                
+          } 
+      // document.getElementById('cameraInput').onchange = function(e) {
+      //     readFile(e.srcElement.files[0]);
+          
+      //      };  
 
-</script> 
+        
+        
+        // document.getElementById('submitBtn').addEventListener('click',
+        //   function(e){
+        //     e.preventDefault();
+        //     console.log(this.parentNode.parentNode.parentNode.parentNode.parentNode);
+        //     google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode.parentNode.parentNode.parentNode.parentNode)
+        //     // (this.parentNode.Phone.value);
+        //   })
+            
+        function onSuccess(data){
+          document.getElementById("resp").value = data;
+          // document.getElementById('resp').innerHTML = data;
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>    
+</body>
+</html>
 </body>
 </html>
