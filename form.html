@@ -797,84 +797,84 @@
             }
         
         function validateform() {
-            // if ($("#hoten").val() == null || $("#hoten").val() === "") {
-            //     $("#hoten").css('box-shadow', '0px 0px 7px red');
-            //     alert("Họ Tên không được để trống!");
-            //     return false;
-            // }
-            // if ($("#ngaysinh").val() == null || $("#ngaysinh").val() === "") {
-            //     $("#ngaysinh").css('box-shadow', '0px 0px 7px red');
-            //     alert("Ngày sinh không được để trống!");
-            //     return false;
-            // }
-            // if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
-            //     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-            //     alert("Căn Cước công dân không được để trống!");
-            //     return false;
-            // }
-            // if (($("#CCCD").val().length == 9) || ($("#CCCD").val().length == 12)) {
-            //     return true;
-            // }
-            // else{
-            //     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-            //     alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
-            //     return false;
-            // }dienthoai
-            // if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
-            //     $("#gioitinh").css('box-shadow', '0px 0px 7px red');
-            //     alert("Giới tính chưa chọn!");
-            //     return false;
-            // }
-            // if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
-            //     $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
-            //     alert("Tình trạng hôn nhân chưa chọn!");
-            //     return false;
-            // }
-            // if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
-            //     $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
-            //     alert("Trình độ học vấn chưa chọn!");
-            //     return false;
-            // }
-            // if ($("#sdt").val() == null || $("#sdt").val() === "") {
-            //     $("#sdt").css('box-shadow', '0px 0px 7px red');
-            //     alert("Chưa nhập số điện thoại!");
-            //     return false;
-            // }
-            // if (($("#sdt").val().length == 9) || ($("#sdt").val().length == 12)) {
-            //     return true;
-            // }
-            // else{
-            //     $("#sdt").css('box-shadow', '0px 0px 7px red');
-            //     alert("Số điện thoại phải đủ 10 số! "+ $("#sdt").val().length);
-            //     return false;
-            // if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
-            //     $("#dienthoai").css('box-shadow', '0px 0px 7px red');
-            //     alert("Điện thoại chưa chọn!");
-            //     return false;
-            // }thoigiansinhsong
+            if ($("#hoten").val() == null || $("#hoten").val() === "") {
+                $("#hoten").css('box-shadow', '0px 0px 7px red');
+                alert("Họ Tên không được để trống!");
+                return false;
+            }
+            if ($("#ngaysinh").val() == null || $("#ngaysinh").val() === "") {
+                $("#ngaysinh").css('box-shadow', '0px 0px 7px red');
+                alert("Ngày sinh không được để trống!");
+                return false;
+            }
+            if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
+                $("#CCCD").css('box-shadow', '0px 0px 7px red');
+                alert("Căn Cước công dân không được để trống!");
+                return false;
+            }
+            if (($("#CCCD").val().length == 9) || ($("#CCCD").val().length == 12)) {
+                return true;
+            }
+            else{
+                $("#CCCD").css('box-shadow', '0px 0px 7px red');
+                alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
+                return false;
+            }dienthoai
+            if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
+                $("#gioitinh").css('box-shadow', '0px 0px 7px red');
+                alert("Giới tính chưa chọn!");
+                return false;
+            }
+            if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
+                $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
+                alert("Tình trạng hôn nhân chưa chọn!");
+                return false;
+            }
+            if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
+                $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
+                alert("Trình độ học vấn chưa chọn!");
+                return false;
+            }
+            if ($("#sdt").val() == null || $("#sdt").val() === "") {
+                $("#sdt").css('box-shadow', '0px 0px 7px red');
+                alert("Chưa nhập số điện thoại!");
+                return false;
+            }
+            if (($("#sdt").val().length == 9) || ($("#sdt").val().length == 12)) {
+                return true;
+            }
+            else{
+                $("#sdt").css('box-shadow', '0px 0px 7px red');
+                alert("Số điện thoại phải đủ 10 số! "+ $("#sdt").val().length);
+                return false;
+            if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
+                $("#dienthoai").css('box-shadow', '0px 0px 7px red');
+                alert("Điện thoại chưa chọn!");
+                return false;
+            }thoigiansinhsong
 
 
-            // if ($("#diachinoiohientai").val() == null || $("#diachinoiohientai").val() === "") {
-            //     $("#diachinoiohientai").css('box-shadow', '0px 0px 7px red');
-            //     alert("Địa chỉ nơi ở hiện tại không được để trống!");
-            //     return false;
-            // }
-            // if ($("#thoigiansinhsong").val() == null || $("#thoigiansinhsong").val() === "") {
-            //     $("#thoigiansinhsong").css('box-shadow', '0px 0px 7px red');
-            //     alert("Thời gian sinh sống không được để trống!");
-            //     return false;
-            // }
+            if ($("#diachinoiohientai").val() == null || $("#diachinoiohientai").val() === "") {
+                $("#diachinoiohientai").css('box-shadow', '0px 0px 7px red');
+                alert("Địa chỉ nơi ở hiện tại không được để trống!");
+                return false;
+            }
+            if ($("#thoigiansinhsong").val() == null || $("#thoigiansinhsong").val() === "") {
+                $("#thoigiansinhsong").css('box-shadow', '0px 0px 7px red');
+                alert("Thời gian sinh sống không được để trống!");
+                return false;
+            }
 
-            // if ($("#doivoikhachthuetro").val() == null || $("#doivoikhachthuetro").val() === "") {
-            //     $("#doivoikhachthuetro").css('box-shadow', '0px 0px 7px red');
-            //     alert("Đối với khách thuê trọ không được để trống!");
-            //     return false;
-            // }
-            // if ($("#diachihokhau").val() == null || $("#diachihokhau").val() === "") {
-            //     $("#diachihokhau").css('box-shadow', '0px 0px 7px red');
-            //     alert("Địa chỉ hộ khẩu không được để trống!");
-            //     return false;
-            // }
+            if ($("#doivoikhachthuetro").val() == null || $("#doivoikhachthuetro").val() === "") {
+                $("#doivoikhachthuetro").css('box-shadow', '0px 0px 7px red');
+                alert("Đối với khách thuê trọ không được để trống!");
+                return false;
+            }
+            if ($("#diachihokhau").val() == null || $("#diachihokhau").val() === "") {
+                $("#diachihokhau").css('box-shadow', '0px 0px 7px red');
+                alert("Địa chỉ hộ khẩu không được để trống!");
+                return false;
+            }
 
 
 
