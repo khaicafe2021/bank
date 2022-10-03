@@ -468,20 +468,20 @@
                 </div>
                  <div class="inputfield">
                    <label>Địa chỉ nơi ở hiện tại</label>
-                   <input type="text" class="input">
+                   <input type="text" class="input" name="Địa chỉ nơi ở hiện tại" id="diachinoiohientai">
                 </div> 
                <div class="inputfield">
                    <label>Thời gian sinh sống</label>
-                   <input type="text" class="input">
+                   <input type="text" class="input" name="Thời gian sinh sống" id="thoigiansinhsong">
                 </div> 
                <div class="inputfield">
                    <label>Đối với khách thuê trọ ( cung cấp số phòng, tên chủ nhà )</label>
                    <!-- <textarea class="textarea"></textarea> -->
-                   <input type="text" class="input">
+                   <input type="text" class="input" name="Đối với khách thuê trọ" id="doivoikhachthuetro">
                 </div> 
                <div class="inputfield">
                    <label>Địa chỉ hộ khẩu ( thường trú )</label>
-                   <input type="text" class="input">
+                   <input type="text" class="input"  name="Địa chỉ hộ khẩu" id="diachihokhau">
                 </div> 
                 <div class="title">
                     3. THÔNG TIN ĐỀ NGHỊ VAY VỐN
@@ -489,7 +489,7 @@
                 <div class="inputfield">
                     <label>Mục đích vay </label>
                     <div class="custom_select">
-                      <select>
+                      <select name="Mục đích vay" id="mucdichvay">
                         <option value="">Chọn</option>
                         <option value="Sửa nhà">Sửa nhà</option>
                         <option value="Mua sắm tiêu dùng">Mua sắm tiêu dùng</option>
@@ -499,12 +499,12 @@
                  </div> 
                  <div class="inputfield">
                     <label>Số tiền đề nghị vay</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Số tiền đề nghị vay" id="sotiendenghivay">
                  </div> 
                  <div class="inputfield">
                     <label>Thời gian góp</label>
-                    <div class="custom_select">
-                      <select>
+                    <div class="custom_select" >
+                      <select name="Thời gian góp" id="thoigiangip">
                         <option value="">Chọn</option>
                         <option value="12 Tháng">12 Tháng</option>
                         <option value="24 Tháng">24 Tháng</option>
@@ -515,7 +515,7 @@
                  <div class="inputfield">
                     <label>Nguồn thu nhập</label>
                     <div class="custom_select">
-                      <select>
+                      <select name="Nguồn thu nhập" id="nguonthunhap">
                         <option value="">Chọn</option>
                         <option value="Từ lương">Từ lương</option>
                         <option value="Từ kinh doanh">Từ kinh doanh</option>
@@ -525,24 +525,24 @@
                  </div>
                  <div class="inputfield">
                     <label>Tên công ty/nơi kinh doanh/ làm việc</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Tên công ty" id="tencongty">
                  </div>  
                  <div class="inputfield">
                     <label>Địa chỉ</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Địa chỉ công ty" id="diachicongty">
                  </div>  
                  <div class="inputfield">
                     <label>Thời gian làm việc </label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Thời gian làm việc" id="thoigianlamviec">
                  </div> 
                  <div class="inputfield">
                     <label>Tổng thu nhập </label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Tổng thu nhập" id="tongthunhap">
                  </div> 
                  <div class="inputfield">
                     <label>Vị trí </label>
                     <div class="custom_select">
-                      <select>
+                      <select name="Vị trí" id="vitri">
                         <option value="">Chọn</option>
                         <option value="Nhân viên">Nhân viên</option>
                         <option value="Công nhân">Công nhân</option>
@@ -559,9 +559,9 @@
                  </div> 
                  <div class="inputfield">
                     <label>Họ tên : </label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Họ tên vợ chồng" id="hotenvochong">
                     <div style="margin-bottom: 14px;" class="custom_select">
-                        <select>
+                        <select name="bảo mật vợ chồng" id="baomatvochong">
                           <option value="">Chọn</option>
                           <option value="Có bảo mật">Có bảo mật</option>
                           <option value="Không bảo mật">Không bảo mật</option>
@@ -571,24 +571,24 @@
                  
                  <div class="inputfield">
                     <label>Ngày sinh</label>
-                    <input type="text" class="input">
+                    <input type="date" class="input" name="Ngày sinh vợ chồng" id="ngaysinhvochong">
                  </div> 
                  <div class="inputfield">
                     <label>Số CMND</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="CMND vợ chồng" id="CMNDvochong">
                  </div> 
                  <div class="inputfield">
                     <label>Số điện thoại</label>
-                    <input type="text" class="input">
+                    <input type="number" class="input" name="sdt vợ chồng" id="sdtvochong">
                  </div> 
                  <div style="padding-bottom: 5px;">
                     <label>4.2 Thông tin người thân </label>
                  </div> 
                  <div class="inputfield">
                     <label>Họ tên : </label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Họ tên người thân" id="hotennguoithan">
                     <div style="margin-bottom: 14px;" class="custom_select">
-                        <select>
+                        <select name="Bảo mật người thân" id="baomatnguoithan">
                           <option value="">Chọn</option>
                           <option value="Có bảo mật">Có bảo mật</option>
                           <option value="Không bảo mật">Không bảo mật</option>
@@ -598,24 +598,24 @@
                  
                  <div class="inputfield">
                     <label>Ngày sinh</label>
-                    <input type="text" class="input">
+                    <input type="date" class="input" name="Ngày sinh người thân" id="ngaysinhnguoithan">
                  </div> 
                  <div class="inputfield">
                     <label>Số CMND</label>
-                    <input type="text" class="input">
+                    <input type="number" class="input" name="CMND người thân" id="CMNDnguoithan">
                  </div> 
                  <div class="inputfield">
                     <label>Số điện thoại</label>
-                    <input type="text" class="input">
+                    <input type="number" class="input" name="sdt người thân" id="sdtnguoithan">
                  </div> 
                  <div style="padding-bottom: 5px;">
                     <label>4.3 Thông tin bạn bè/đồng nghiệp</label>
                  </div> 
                  <div class="inputfield">
                     <label>Họ tên : </label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Họ tên đồng nghiệp" id="hotendongnghiep">
                     <div style="margin-bottom: 14px;"class="custom_select">
-                        <select>
+                        <select name="Bảo mật đồng nghiệp" id="baomatdongnghiep">
                           <option value="">Chọn</option>
                           <option value="Có bảo mật">Có bảo mật</option>
                           <option value="Không bảo mật">Không bảo mật</option>
@@ -625,15 +625,15 @@
                  
                  <div class="inputfield">
                     <label>Ngày sinh</label>
-                    <input type="text" class="input">
+                    <input type="date" class="input" name="Ngày sinh đồng nghiệp" id="ngaysinhdongnghiep">
                  </div> 
                  <div class="inputfield">
                     <label>Số CMND</label>
-                    <input type="text" class="input">
+                    <input type="number" class="input" name="CMND đồng nghiệp" id="CMNDdongnghiep">
                  </div> 
                  <div class="inputfield">
                     <label>Số điện thoại</label>
-                    <input type="text" class="input">
+                    <input type="number" class="input" name="sdt đồng nghiệp" id="sdtdongnghiep">
                  </div> 
 
                 <div class="title">
@@ -641,7 +641,7 @@
                 </div>
                 <div class="inputfield">
                     <div class="custom_select">
-                        <select>
+                        <select name="Giải ngân" id="giaingan">
                         <option value="">Chọn</option>
                         <option value="Tiền mặt">Tiền mặt</option>
                         <option value="chuyển khoản">chuyển khoản</option>
@@ -650,19 +650,19 @@
                  </div>
                 <div class="inputfield">
                     <label>Ngân hàng</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Ngân hàng" id="nganhang">
                  </div> 
                  <div class="inputfield">
                     <label>Chi nhánh</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Chi nhanh" id="chinhanh">
                  </div> 
                  <div class="inputfield">
                     <label>Số tài khoản</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Số tài khoản" id="sotaikhoan">
                  </div> 
                  <div class="inputfield">
                     <label>Tên chủ tài khoản</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="Tên chủ tài khoản" id="tenchutaikhoan">
                  </div> 
                  <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
@@ -672,7 +672,7 @@
                 <div class="inputfield">
                     <img id="imagefile1" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
-                <input id="filenamefile1" type="text" style="visibility: hidden;"> 
+                <input id="filenamefile1" type="text" style="visibility: hidden;"name="Hinh CCCD mặt trước"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
@@ -682,33 +682,37 @@
                 <div class="inputfield">
                     <img id="imagefile2" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
+                <input id="filenamefile2" type="text" style="visibility: hidden;"name="Hinh CCCD mặt sau"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file3" style="text-align: center;">Chụp Hình CCCD Mặt Trước</label>
+                    <label class="btn" for="file3" style="text-align: center;">Chụp Hình Chân Dung</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file3" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
                     <img id="imagefile3" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
+                <input id="filenamefile3" type="text" style="visibility: hidden;"name="Hinh chân dung"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file4" style="text-align: center;">Chụp Hình CCCD Mặt Trước</label>
+                    <label class="btn" for="file4" style="text-align: center;">Chụp Hình bằng lái xe Mặt Trước</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file4" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
                     <img id="imagefile4" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
+                <input id="filenamefile4" type="text" style="visibility: hidden;"name="Hinh bằng lái xe mặt trước"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file5" style="text-align: center;">Chụp Hình CCCD Mặt Trước</label>
+                    <label class="btn" for="file5" style="text-align: center;">Chụp Hình bằng lái xe Mặt Sau</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file5" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
                     <img id="imagefile5" style="width: 100%; height: 240; text-align: center;"/> 
                 </div>
+                <input id="filenamefile5" type="text" style="visibility: hidden;"name="Hinh bằng lái xe mặt sau"> 
                  
 
                <div class="inputfield terms">
@@ -843,11 +847,35 @@
             //     $("#sdt").css('box-shadow', '0px 0px 7px red');
             //     alert("Số điện thoại phải đủ 10 số! "+ $("#sdt").val().length);
             //     return false;
-            if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
-                $("#dienthoai").css('box-shadow', '0px 0px 7px red');
-                alert("Điện thoại chưa chọn!");
-                return false;
-            }
+            // if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
+            //     $("#dienthoai").css('box-shadow', '0px 0px 7px red');
+            //     alert("Điện thoại chưa chọn!");
+            //     return false;
+            // }thoigiansinhsong
+
+
+            // if ($("#diachinoiohientai").val() == null || $("#diachinoiohientai").val() === "") {
+            //     $("#diachinoiohientai").css('box-shadow', '0px 0px 7px red');
+            //     alert("Địa chỉ nơi ở hiện tại không được để trống!");
+            //     return false;
+            // }
+            // if ($("#thoigiansinhsong").val() == null || $("#thoigiansinhsong").val() === "") {
+            //     $("#thoigiansinhsong").css('box-shadow', '0px 0px 7px red');
+            //     alert("Thời gian sinh sống không được để trống!");
+            //     return false;
+            // }
+
+            // if ($("#doivoikhachthuetro").val() == null || $("#doivoikhachthuetro").val() === "") {
+            //     $("#doivoikhachthuetro").css('box-shadow', '0px 0px 7px red');
+            //     alert("Đối với khách thuê trọ không được để trống!");
+            //     return false;
+            // }
+            // if ($("#diachihokhau").val() == null || $("#diachihokhau").val() === "") {
+            //     $("#diachihokhau").css('box-shadow', '0px 0px 7px red');
+            //     alert("Địa chỉ hộ khẩu không được để trống!");
+            //     return false;
+            // }
+
 
 
 
