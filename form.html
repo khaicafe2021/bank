@@ -94,7 +94,8 @@
                  </div> 
                  <div class="inputfield">
                     <label>Điện thoại</label>
-                    <div class="custom_select">
+                    <input type="number" class="input" name="sdt" id="sdt">
+                    <div class="custom_select" style="padding-left: 5px;">
                       <select name="Điện thoại" id="dienthoai">
                         <option value="">Chọn</option>
                         <option value="Có chính chủ">Có chính chủ</option>
@@ -455,21 +456,33 @@
             //     alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
             //     return false;
             // }dienthoai
-            if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
-                $("#gioitinh").css('box-shadow', '0px 0px 7px red');
-                alert("Giới tính chưa chọn!");
-                return false;
-            }
-            if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
-                $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
-                alert("Tình trạng hôn nhân chưa chọn!");
-                return false;
-            }
-            if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
-                $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
-                alert("Trình độ học vấn chưa chọn!");
-                return false;
-            }
+            // if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
+            //     $("#gioitinh").css('box-shadow', '0px 0px 7px red');
+            //     alert("Giới tính chưa chọn!");
+            //     return false;
+            // }
+            // if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
+            //     $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
+            //     alert("Tình trạng hôn nhân chưa chọn!");
+            //     return false;
+            // }
+            // if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
+            //     $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
+            //     alert("Trình độ học vấn chưa chọn!");
+            //     return false;
+            // }
+            // if ($("#sdt").val() == null || $("#sdt").val() === "") {
+            //     $("#sdt").css('box-shadow', '0px 0px 7px red');
+            //     alert("Chưa nhập số điện thoại!");
+            //     return false;
+            // }
+            // if (($("#sdt").val().length == 9) || ($("#sdt").val().length == 12)) {
+            //     return true;
+            // }
+            // else{
+            //     $("#sdt").css('box-shadow', '0px 0px 7px red');
+            //     alert("Số điện thoại phải đủ 10 số! "+ $("#sdt").val().length);
+            //     return false;
             if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
                 $("#dienthoai").css('box-shadow', '0px 0px 7px red');
                 alert("Điện thoại chưa chọn!");
