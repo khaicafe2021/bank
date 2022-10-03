@@ -36,16 +36,16 @@
         <div class="title">
             1. THÔNG TIN KHÁCH HÀNG VAY
         </div>
-        <form id="test-forma" method="POST">
+        <form id="form" method="POST">
             <div class="form">
                 <div class="inputfield">
                    <label>Họ tên</label>
-                   <input type="text" class="input">
+                   <input type="text" class="input" name="Họ và Tên" id="hoten" placeholder="Họ và Tên">
                 </div>  
                  <div class="inputfield">
                    <label>Giới tính</label>
                    <div class="custom_select">
-                        <select>
+                        <select name="Giới tính" id="gioitinh">
                             <option value="">Chọn</option>
                             <option value="Nữ">Nữ</option>
                             <option value="Nam">Nam</option>
@@ -54,20 +54,20 @@
                 </div>  
                 <div class="inputfield">
                    <label>Ngày sinh</label>
-                   <input type="text" class="input">
+                   <input type="date" class="input" name="Ngày sinh" id="ngaysinh">
                 </div>  
                <div class="inputfield">
                    <label>CMND/ CCCD</label>
-                   <input type="text" class="input">
+                   <input type="number" class="input" name="CCCD/CMND" id="CCCD">
                 </div> 
                 <div class="inputfield">
                     <label>CMND cũ ( nếu có )</label>
-                    <input type="text" class="input">
+                    <input type="number" class="input" name="CMND Cũ" id="CMND">
                  </div> 
                  <div class="inputfield">
                    <label>Tình trạng hôn nhân</label>
                    <div class="custom_select">
-                     <select>
+                     <select name="Tình trạng hôn nhân" id="tinhtranghonnhan">
                        <option value="">Chọn</option>
                        <option value="Độc thân">Độc thân</option>
                        <option value="Đã lập gia đình">Đã lập gia đình</option>
@@ -80,7 +80,7 @@
                 <div class="inputfield">
                     <label>Trình độ học vấn</label>
                     <div class="custom_select">
-                      <select>
+                      <select name="Trình độ học vấn" id="trinhdohocvan">
                         <option value="">Chọn</option>
                         <option value="Tiểu học">Tiểu học</option>
                         <option value="THCS">THCS</option>
@@ -95,7 +95,7 @@
                  <div class="inputfield">
                     <label>Điện thoại</label>
                     <div class="custom_select">
-                      <select>
+                      <select name="Điện thoại" id="dienthoai">
                         <option value="">Chọn</option>
                         <option value="Có chính chủ">Có chính chủ</option>
                         <option value="Có chính chủ">Không chính chủ</option>
@@ -311,6 +311,7 @@
                 <div class="inputfield">
                     <img id="imagefile1" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
+                <input id="filenamefile1" type="text" style="visibility: hidden;"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
@@ -345,9 +346,9 @@
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file5" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
-                    <img id="imagefile5" style="width: 100%; height: 240; text-align: center;"/>               
+                    <img id="imagefile5" style="width: 100%; height: 240; text-align: center;"/> 
                 </div>
-
+                 
 
                <div class="inputfield terms">
                    <label class="check">
@@ -357,7 +358,7 @@
                    <p>Agreed to terms and conditions</p>
                 </div> 
                <div class="inputfield">
-                 <input type="submit" value="Register" class="btn">
+                 <button style="height: 80px;" type="submit" class="btn" id="submit-form">Đăng ký</button>
                </div>
              </div>
         </form>
@@ -377,16 +378,29 @@
     <script>
         $(document).ready(function() {
             $('input[type="file"]').change(function(e) {
+                e.preventDefault();
                 var geekss = e.target.files[0].name;
                 console.log((this.id))
-                
                 readFile(this.id, e.target.files[0]);
+
+                const file= e.target.files[0];
+                const fr = new FileReader();
+                fr.readAsArrayBuffer(file);
+                fr.onload = f => {
+                const url = "https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec";  // <--- Please set the URL of Web Apps.
+                const qs = new URLSearchParams({filename: file.name, mimeType: file.type});
+                fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
+                .then(res => res.json())
+                .then(e => {
+                    console.log(e.fileUrl)
+                    document.getElementById("filename"+this.id).value = e.fileUrl;
+                })  // <--- You can retrieve the returned value here.
+                .catch(err => console.log(err));
+                }
                 
             });
         });
         
-        
-
         function readFile(id,file) {                                                       
           var reader = new FileReader();
           reader.onload = readSuccess;                                            
@@ -402,26 +416,89 @@
           // document.getElementById('resp').innerHTML = data;
         }
 
-
-        
-        var $form = $('form#test-form'),
+        function submitform() {
+            var $form = $('form#form')
             url = 'https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec'
+            var jqxhr = $.ajax({
+                        url: url,
+                        method: "POST",
+                        dataType: "json",
+                        data: $form.serialize(),
+                        success : function(data) {
+                            console.log(data);
+                            alert("Gửi form thành công");
+                        }
+                    })
+            }
         
+        function validateform() {
+            // if ($("#hoten").val() == null || $("#hoten").val() === "") {
+            //     $("#hoten").css('box-shadow', '0px 0px 7px red');
+            //     alert("Họ Tên không được để trống!");
+            //     return false;
+            // }
+            // if ($("#ngaysinh").val() == null || $("#ngaysinh").val() === "") {
+            //     $("#ngaysinh").css('box-shadow', '0px 0px 7px red');
+            //     alert("Ngày sinh không được để trống!");
+            //     return false;
+            // }
+            // if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
+            //     $("#CCCD").css('box-shadow', '0px 0px 7px red');
+            //     alert("Căn Cước công dân không được để trống!");
+            //     return false;
+            // }
+            // if (($("#CCCD").val().length == 9) || ($("#CCCD").val().length == 12)) {
+            //     return true;
+            // }
+            // else{
+            //     $("#CCCD").css('box-shadow', '0px 0px 7px red');
+            //     alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
+            //     return false;
+            // }dienthoai
+            if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
+                $("#gioitinh").css('box-shadow', '0px 0px 7px red');
+                alert("Giới tính chưa chọn!");
+                return false;
+            }
+            if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
+                $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
+                alert("Tình trạng hôn nhân chưa chọn!");
+                return false;
+            }
+            if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
+                $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
+                alert("Trình độ học vấn chưa chọn!");
+                return false;
+            }
+            if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
+                $("#dienthoai").css('box-shadow', '0px 0px 7px red');
+                alert("Điện thoại chưa chọn!");
+                return false;
+            }
+
+
+
+
+
+            return true;// else if (password.length < 6) {
+            // alert("Mật khẩu ít nhất 6 ký tự");
+            // return false;
+            // }
+            // var num = 3;
+            // if (isNaN(num)) {
+            // document.getElementById("so").innerHTML = "Chỉ được nhập số.";
+            // return false;
+            // } else {
+            // return true;
+            // }
+            
+        }
         $('#submit-form').on('click', function(e) {
               e.preventDefault();
-            var jqxhr = $.ajax({
-                url: url,
-                method: "POST",
-                dataType: "json",
-                data: $form.serialize(),
-                success : function(data) {
-                    console.log(data);
-                    alert("Gửi form thành công");
-                }
-            })
-            // .success(
-            //       alert("Gửi form thành công")
-            // )
+              if (validateform()){
+                submitform()
+              };
+                
         })
 
        
