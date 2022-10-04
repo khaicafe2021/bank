@@ -672,8 +672,8 @@
                 <div class="inputfield">
                     <img id="imagefile1" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
-                <input id="filenamefile1" type="text" style="visibility: hidden;"name="Hinh CCCD mặt trước"> 
-
+                <input id="filenamefile1" type="text" name="Hinh CCCD mặt trước"> 
+                <!-- style="visibility: hidden;" -->
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
                     <label class="btn" for="file2" style="text-align: center;">Chụp Hình CCCD Mặt Sau</label>
@@ -682,7 +682,7 @@
                 <div class="inputfield">
                     <img id="imagefile2" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
-                <input id="filenamefile2" type="text" style="visibility: hidden;"name="Hinh CCCD mặt sau"> 
+                <input id="filenamefile2" type="text" name="Hinh CCCD mặt sau"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
@@ -692,7 +692,7 @@
                 <div class="inputfield">
                     <img id="imagefile3" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
-                <input id="filenamefile3" type="text" style="visibility: hidden;"name="Hinh chân dung"> 
+                <input id="filenamefile3" type="text" name="Hinh chân dung"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
@@ -702,7 +702,7 @@
                 <div class="inputfield">
                     <img id="imagefile4" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
-                <input id="filenamefile4" type="text" style="visibility: hidden;"name="Hinh bằng lái xe mặt trước"> 
+                <input id="filenamefile4" type="text" name="Hinh bằng lái xe mặt trước"> 
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
@@ -712,7 +712,7 @@
                 <div class="inputfield">
                     <img id="imagefile5" style="width: 100%; height: 240; text-align: center;"/> 
                 </div>
-                <input id="filenamefile5" type="text" style="visibility: hidden;"name="Hinh bằng lái xe mặt sau"> 
+                <input id="filenamefile5" type="text" style="visibility: hidden;" name="Hinh bằng lái xe mặt sau"> 
                  
 
                <div class="inputfield terms">
@@ -892,9 +892,10 @@
             }
             $('#submit-form').on('click', function(e) {
                 e.preventDefault();
-                if (validateform()){
-                    submitform()
-                };
+                // if (validateform()){
+                //     submitform()
+                // };
+                submitform()
                     
             })
 
