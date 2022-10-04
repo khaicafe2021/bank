@@ -401,7 +401,7 @@
             <div class="form">
                 <div class="inputfield">
                    <label>Họ tên</label>
-                   <input type="text" class="input" name="Họ và Tên" id="hoten" placeholder="Họ và Tên">
+                   <input type="text" class="input" name="Họ và Tên" id="hoten" placeholder="">
                 </div>  
                  <div class="inputfield">
                    <label>Giới tính</label>
@@ -591,7 +591,7 @@
                  </div> 
                  <div class="inputfield">
                     <label>Số CMND</label>
-                    <input type="text" class="input" name="CMND vợ chồng" id="CMNDvochong">
+                    <input type="number" class="input" name="CMND vợ chồng" id="CMNDvochong">
                  </div> 
                  <div class="inputfield">
                     <label>Số điện thoại</label>
@@ -616,10 +616,10 @@
                     <label>Ngày sinh</label>
                     <input type="date" class="input" name="Ngày sinh người thân" id="ngaysinhnguoithan">
                  </div> 
-                 <div class="inputfield">
+                 <!-- <div class="inputfield">
                     <label>Số CMND</label>
                     <input type="number" class="input" name="CMND người thân" id="CMNDnguoithan">
-                 </div> 
+                 </div>  -->
                  <div class="inputfield">
                     <label>Số điện thoại</label>
                     <input type="number" class="input" name="sdt người thân" id="sdtnguoithan">
@@ -643,10 +643,10 @@
                     <label>Ngày sinh</label>
                     <input type="date" class="input" name="Ngày sinh đồng nghiệp" id="ngaysinhdongnghiep">
                  </div> 
-                 <div class="inputfield">
+                 <!-- <div class="inputfield">
                     <label>Số CMND</label>
                     <input type="number" class="input" name="CMND đồng nghiệp" id="CMNDdongnghiep">
-                 </div> 
+                 </div>  -->
                  <div class="inputfield">
                     <label>Số điện thoại</label>
                     <input type="number" class="input" name="sdt đồng nghiệp" id="sdtdongnghiep">
@@ -674,7 +674,7 @@
                  </div> 
                  <div class="inputfield">
                     <label>Số tài khoản</label>
-                    <input type="text" class="input" name="Số tài khoản" id="sotaikhoan">
+                    <input type="number" class="input" name="Số tài khoản" id="sotaikhoan">
                  </div> 
                  <div class="inputfield">
                     <label>Tên chủ tài khoản</label>
@@ -689,7 +689,7 @@
                     <img id="imagefile1" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
                 <input id="filenamefile1" type="text" style="visibility: hidden;" name="Hinh CCCD mặt trước"> 
-                <!-- style="visibility: hidden;" -->
+                
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
                     <label class="btn" for="file2" style="text-align: center;">Chụp Hình CCCD Mặt Sau</label>
@@ -822,149 +822,230 @@
                 }
             
             function validateform() {
-                // if ($("#hoten").val() == null || $("#hoten").val() === "") {
-                //     $("#hoten").css('box-shadow', '0px 0px 7px red');
-                //     alert("Họ Tên không được để trống!");
-                //     return false;
-                // }
-                // if ($("#ngaysinh").val() == null || $("#ngaysinh").val() === "") {
-                //     $("#ngaysinh").css('box-shadow', '0px 0px 7px red');
-                //     alert("Ngày sinh không được để trống!");
-                //     return false;
-                // }
-                // if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
-                //     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-                //     alert("Căn Cước công dân không được để trống!");
-                //     return false;
-                // }
-                // if (($("#CCCD").val().length == 9) || ($("#CCCD").val().length == 12)) {
-                //     return true;
-                // }
-                // else{
-                //     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-                //     alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
-                //     return false;
-                // }dienthoai
-                // if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
-                //     $("#gioitinh").css('box-shadow', '0px 0px 7px red');
-                //     alert("Giới tính chưa chọn!");
-                //     return false;
-                // }
-                // if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
-                //     $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
-                //     alert("Tình trạng hôn nhân chưa chọn!");
-                //     return false;
-                // }
-                // if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
-                //     $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
-                //     alert("Trình độ học vấn chưa chọn!");
-                //     return false;
-                // }
-                // if ($("#sdt").val() == null || $("#sdt").val() === "") {
-                //     $("#sdt").css('box-shadow', '0px 0px 7px red');
-                //     alert("Chưa nhập số điện thoại!");
-                //     return false;
-                // }
-                // if (($("#sdt").val().length == 9) || ($("#sdt").val().length == 12)) {
-                //     return true;
-                // }
-                // else{
-                //     $("#sdt").css('box-shadow', '0px 0px 7px red');
-                //     alert("Số điện thoại phải đủ 10 số! "+ $("#sdt").val().length);
-                //     return false;
-                // }
-                // if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
-                //     $("#dienthoai").css('box-shadow', '0px 0px 7px red');
-                //     alert("Điện thoại chưa chọn!");
-                //     return false;
-                // }
+                if ($("#hoten").val() == null || $("#hoten").val() === "") {
+                    $("#hoten").css('box-shadow', '0px 0px 7px red');
+                    alert("Họ Tên không được để trống!");
+                    return false;
+                }
+                if ($("#ngaysinh").val() == null || $("#ngaysinh").val() === "") {
+                    $("#ngaysinh").css('box-shadow', '0px 0px 7px red');
+                    alert("Ngày sinh không được để trống!");
+                    return false;
+                }
+                if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
+                    $("#CCCD").css('box-shadow', '0px 0px 7px red');
+                    alert("Căn Cước công dân không được để trống!");
+                    return false;
+                }
+                if (($("#CCCD").val().length == 9) || ($("#CCCD").val().length == 12)) {
+                    return true;
+                }
+                else{
+                    $("#CCCD").css('box-shadow', '0px 0px 7px red');
+                    alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
+                    return false;
+                }dienthoai
+                if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
+                    $("#gioitinh").css('box-shadow', '0px 0px 7px red');
+                    alert("Giới tính chưa chọn!");
+                    return false;
+                }
+                if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
+                    $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
+                    alert("Tình trạng hôn nhân chưa chọn!");
+                    return false;
+                }
+                if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
+                    $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
+                    alert("Trình độ học vấn chưa chọn!");
+                    return false;
+                }
+                if ($("#sdt").val() == null || $("#sdt").val() === "") {
+                    $("#sdt").css('box-shadow', '0px 0px 7px red');
+                    alert("Chưa nhập số điện thoại!");
+                    return false;
+                }
+                if (($("#sdt").val().length == 10)) {
+                    return true;
+                }
+                else{
+                    $("#sdt").css('box-shadow', '0px 0px 7px red');
+                    alert("Số điện thoại phải đủ 10 số! "+ $("#sdt").val().length);
+                    return false;
+                }
+                if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
+                    $("#dienthoai").css('box-shadow', '0px 0px 7px red');
+                    alert("Điện thoại chưa chọn!");
+                    return false;
+                }
 
 
-                // if ($("#diachinoiohientai").val() == null || $("#diachinoiohientai").val() === "") {
-                //     $("#diachinoiohientai").css('box-shadow', '0px 0px 7px red');
-                //     alert("Địa chỉ nơi ở hiện tại không được để trống!");
-                //     return false;
-                // }
-                // if ($("#thoigiansinhsong").val() == null || $("#thoigiansinhsong").val() === "") {
-                //     $("#thoigiansinhsong").css('box-shadow', '0px 0px 7px red');
-                //     alert("Thời gian sinh sống không được để trống!");
-                //     return false;
-                // }
+                if ($("#diachinoiohientai").val() == null || $("#diachinoiohientai").val() === "") {
+                    $("#diachinoiohientai").css('box-shadow', '0px 0px 7px red');
+                    alert("Địa chỉ nơi ở hiện tại không được để trống!");
+                    return false;
+                }
+                if ($("#thoigiansinhsong").val() == null || $("#thoigiansinhsong").val() === "") {
+                    $("#thoigiansinhsong").css('box-shadow', '0px 0px 7px red');
+                    alert("Thời gian sinh sống không được để trống!");
+                    return false;
+                }
 
-                // if ($("#doivoikhachthuetro").val() == null || $("#doivoikhachthuetro").val() === "") {
-                //     $("#doivoikhachthuetro").css('box-shadow', '0px 0px 7px red');
-                //     alert("Đối với khách thuê trọ không được để trống!");
-                //     return false;
-                // }
-                // if ($("#diachihokhau").val() == null || $("#diachihokhau").val() === "") {
-                //     $("#diachihokhau").css('box-shadow', '0px 0px 7px red');
-                //     alert("Địa chỉ hộ khẩu không được để trống!");
-                //     return false;
-                // }
-                // if ($("#mucdichvay").val() == null || $("#mucdichvay").val() === "") {
-                //     $("#mucdichvay").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#mucdichvay").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#sotiendenghivay").val() == null || $("#sotiendenghivay").val() === "") {
-                //     $("#sotiendenghivay").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#sotiendenghivay").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#thoigiangip").val() == null || $("#thoigiangip").val() === "") {
-                //     $("#thoigiangip").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#thoigiangip").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#nguonthunhap").val() == null || $("#nguonthunhap").val() === "") {
-                //     $("#nguonthunhap").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#nguonthunhap").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#tencongty").val() == null || $("#tencongty").val() === "") {
-                //     $("#tencongty").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#tencongty").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#diachicongty").val() == null || $("#diachicongty").val() === "") {
-                //     $("#diachicongty").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#diachicongty").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#thoigianlamviec").val() == null || $("#thoigianlamviec").val() === "") {
-                //     $("#thoigianlamviec").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#thoigianlamviec").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#tongthunhap").val() == null || $("#tongthunhap").val() === "") {
-                //     $("#tongthunhap").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#tongthunhap").attr("name")) + "!");
-                //     return false;
-                // }
-                // if ($("#vitri").val() == null || $("#vitri").val() === "") {
-                //     $("#vitri").css('box-shadow', '0px 0px 7px red');
-                //     alert("Bạn chưa chọn "+ ($("#vitri").attr("name")) + "!");
-                //     return false;
-                // }
+                if ($("#doivoikhachthuetro").val() == null || $("#doivoikhachthuetro").val() === "") {
+                    $("#doivoikhachthuetro").css('box-shadow', '0px 0px 7px red');
+                    alert("Đối với khách thuê trọ không được để trống!");
+                    return false;
+                }
+                if ($("#diachihokhau").val() == null || $("#diachihokhau").val() === "") {
+                    $("#diachihokhau").css('box-shadow', '0px 0px 7px red');
+                    alert("Địa chỉ hộ khẩu không được để trống!");
+                    return false;
+                }
+                if ($("#mucdichvay").val() == null || $("#mucdichvay").val() === "") {
+                    $("#mucdichvay").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#mucdichvay").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#sotiendenghivay").val() == null || $("#sotiendenghivay").val() === "") {
+                    $("#sotiendenghivay").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#sotiendenghivay").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#thoigiangip").val() == null || $("#thoigiangip").val() === "") {
+                    $("#thoigiangip").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#thoigiangip").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#nguonthunhap").val() == null || $("#nguonthunhap").val() === "") {
+                    $("#nguonthunhap").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#nguonthunhap").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#tencongty").val() == null || $("#tencongty").val() === "") {
+                    $("#tencongty").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#tencongty").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#diachicongty").val() == null || $("#diachicongty").val() === "") {
+                    $("#diachicongty").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#diachicongty").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#thoigianlamviec").val() == null || $("#thoigianlamviec").val() === "") {
+                    $("#thoigianlamviec").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#thoigianlamviec").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#tongthunhap").val() == null || $("#tongthunhap").val() === "") {
+                    $("#tongthunhap").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#tongthunhap").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#vitri").val() == null || $("#vitri").val() === "") {
+                    $("#vitri").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa chọn "+ ($("#vitri").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#hotenvochong").val() == null || $("#hotenvochong").val() === "") {
+                    $("#hotenvochong").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#hotenvochong").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#ngaysinhvochong").val() == null || $("#ngaysinhvochong").val() === "") {
+                    $("#ngaysinhvochong").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#ngaysinhvochong").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#CMNDvochong").val() == null || $("#CMNDvochong").val() === "") {
+                    $("#CMNDvochong").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#CMNDvochong").attr("name")) + "!");
+                    return false;
+                }
+                if (($("#CMNDvochong").val().length == 9) || ($("#CMNDvochong").val().length == 12)) {
+                    return true;
+                }
+                else{
+                    $("#CMNDvochong").css('box-shadow', '0px 0px 7px red');
+                    alert(($("#CMNDvochong").attr("name")) + "phải nhập đủ 9 hoặc 12 số! ");
+                    return false;
+                }
+                if ($("#sdtvochong").val() == null || $("#sdtvochong").val() === "") {
+                    $("#sdtvochong").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#sdtvochong").attr("name")) + "!");
+                    return false;
+                }
+                if (($("#sdtvochong").val().length == 10)) {
+                    return true;
+                }
+                else{
+                    $("#sdtvochong").css('box-shadow', '0px 0px 7px red');
+                    alert(($("#sdtvochong").attr("name")) + "phải nhập đủ 10 số! ");
+                    return false;
+                }
+                if ($("#hotennguoithan").val() == null || $("#hotennguoithan").val() === "") {
+                    $("#hotennguoithan").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#hotennguoithan").attr("name")) + "!");
+                    return false;
+                }
+
+                if ($("#ngaysinhnguoithan").val() == null || $("#ngaysinhnguoithan").val() === "") {
+                    $("#ngaysinhnguoithan").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#ngaysinhnguoithan").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#sdtnguoithan").val() == null || $("#sdtnguoithan").val() === "") {
+                    $("#sdtnguoithan").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#sdtnguoithan").attr("name")) + "!");
+                    return false;
+                }
+                if (($("#sdtnguoithan").val().length == 10)) {
+                    return true;
+                }
+                else{
+                    $("#sdtnguoithan").css('box-shadow', '0px 0px 7px red');
+                    alert(($("#sdtnguoithan").attr("name")) + "phải nhập đủ 10 số! ");
+                    return false;
+                }
+
+                if ($("#hotendongnghiep").val() == null || $("#hotendongnghiep").val() === "") {
+                    $("#hotendongnghiep").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#hotendongnghiep").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#ngaysinhdongnghiep").val() == null || $("#ngaysinhdongnghiep").val() === "") {
+                    $("#ngaysinhdongnghiep").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#ngaysinhdongnghiep").attr("name")) + "!");
+                    return false;
+                }
+                if ($("#sdtdongnghiep").val() == null || $("#sdtdongnghiep").val() === "") {
+                    $("#sdtdongnghiep").css('box-shadow', '0px 0px 7px red');
+                    alert("Bạn chưa nhập "+ ($("#sdtdongnghiep").attr("name")) + "!");
+                    return false;
+                }
+                if (($("#sdtdongnghiep").val().length == 10)) {
+                    return true;
+                }
+                else{
+                    $("#sdtdongnghiep").css('box-shadow', '0px 0px 7px red');
+                    alert(($("#sdtdongnghiep").attr("name")) + "phải nhập đủ 10 số! ");
+                    return false;
+                }
 
 
-                //thoigiangip
-
-
-
-
-
-                return true;// else if (password.length < 6) {
-                // alert("Mật khẩu ít nhất 6 ký tự");
-                // return false;
-                // }
-                // var num = 3;
-                // if (isNaN(num)) {
-                // document.getElementById("so").innerHTML = "Chỉ được nhập số.";
-                // return false;
-                // } else {
-                // return true;
-                // }
+                if ($("#filenamefile1").val() == null || $("#filenamefile1").val() === "") {
+                    alert("Bạn chưa Chụp CCCD/CMND Mặt trước !");
+                    return false;
+                }
+                if ($("#filenamefile2").val() == null || $("#filenamefile2").val() === "") {
+                    alert("Bạn chưa Chụp CCCD/CMND Mặt sau !");
+                    return false;
+                }
+                if ($("#filenamefile3").val() == null || $("#filenamefile3").val() === "") {
+                    alert("Bạn chưa Chụp hình chân dung !");
+                    return false;
+                }
+                return true;
+                
                 
             }
             $('#submit-form').on('click', function(e) {
@@ -972,7 +1053,6 @@
                 if (validateform()){
                     submitform()
                 };
-                // submitform()
                     
             })
 
