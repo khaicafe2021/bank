@@ -742,7 +742,7 @@
                     var geekss = e.target.files[0].name;
                     console.log((this.id))
                     readFile(this.id, e.target.files[0]);
-
+                    
                     const file= e.target.files[0];
                     const fr = new FileReader();
                     fr.readAsArrayBuffer(file);
@@ -754,6 +754,7 @@
                     .then(e => {
                         console.log(e.fileUrl)
                         document.getElementById("filename"+this.id).value = e.fileUrl;
+                        alert("upload hình thành công");
                     })  // <--- You can retrieve the returned value here.
                     .catch(err => console.log(err));
                     }
