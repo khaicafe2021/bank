@@ -367,6 +367,7 @@
         <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styleloading.css">
         <!-- style của zalo chat -->
         <style>
             @keyframes zoom{0%{transform:scale(.5);opacity:0}50%{opacity:1}to{opacity:0;transform:scale(1)}}
@@ -727,6 +728,15 @@
                </div>
              </div>
         </form>
+        </div>
+        <!-- phần popup loading -->
+        <div class="pop_up_container" id="popuploadingmain">
+            <div class="pop_up">
+                <div class="centerloading">
+                    <div class="ring"></div>
+                   <span id="spanloading">loading...</span>
+               </div>
+            </div>
         </div>	
         <!-- phần chat zalo -->
         <a href="https://chat.zalo.me/?phone=0868975598" id="linkzalo" target="_blank" rel="noopener noreferrer"><div id="fcta-zalo-tracking" class="fcta-zalo-mess">
@@ -747,6 +757,7 @@
                     const fr = new FileReader();
                     fr.readAsArrayBuffer(file);
                     fr.onload = f => {
+                    document.getElementById("popuploadingmain").style.visibility="visible";
                     const url = "https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec";  // <--- Please set the URL of Web Apps.
                     const qs = new URLSearchParams({filename: file.name, mimeType: file.type});
                     fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
@@ -754,7 +765,7 @@
                     .then(e => {
                         console.log(e.fileUrl)
                         document.getElementById("filename"+this.id).value = e.fileUrl;
-                        alert("upload hình thành công");
+                        document.getElementById("popuploadingmain").style.visibility="hidden";
                     })  // <--- You can retrieve the returned value here.
                     .catch(err => console.log(err));
                     }
@@ -778,6 +789,7 @@
             }
 
             function submitform() {
+                document.getElementById("popuploadingmain").style.visibility="visible";
                 var $form = $('form#form')
                 url = 'https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec'
                 var jqxhr = $.ajax({
@@ -787,9 +799,11 @@
                             data: $form.serialize(),
                             success : function(data) {
                                 console.log(data);
+                                document.getElementById("popuploadingmain").style.visibility="hidden";
                                 alert("Gửi form thành công");
                             }
                         })
+                
                 }
             
             function validateform() {
