@@ -821,61 +821,73 @@
                 
                 }
             
+            
+                            
             function validateform() {
                 if ($("#hoten").val() == null || $("#hoten").val() === "") {
                     $("#hoten").css('box-shadow', '0px 0px 7px red');
+                    location.href = "#hoten";
                     alert("Họ Tên không được để trống!");
                     return false;
                 }
                 if ($("#ngaysinh").val() == null || $("#ngaysinh").val() === "") {
                     $("#ngaysinh").css('box-shadow', '0px 0px 7px red');
                     alert("Ngày sinh không được để trống!");
+                    location.href = "#ngaysinh";
                     return false;
                 }
                 if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
                     $("#CCCD").css('box-shadow', '0px 0px 7px red');
                     alert("Căn Cước công dân không được để trống!");
+                    location.href = "#CCCD";
                     return false;
                 }
                 if (($("#CCCD").val().length == 9) || ($("#CCCD").val().length == 12)) {
-                    return true;
+                    console.log('oki cccd');
                 }
                 else{
                     $("#CCCD").css('box-shadow', '0px 0px 7px red');
                     alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
+                    location.href = "#CCCD";
                     return false;
-                }dienthoai
+                }
                 if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
                     $("#gioitinh").css('box-shadow', '0px 0px 7px red');
                     alert("Giới tính chưa chọn!");
+                    location.href = "#gioitinh";
                     return false;
                 }
                 if ($("#tinhtranghonnhan").val() == null || $("#tinhtranghonnhan").val() === "") {
                     $("#tinhtranghonnhan").css('box-shadow', '0px 0px 7px red');
                     alert("Tình trạng hôn nhân chưa chọn!");
+                    location.href = "#tinhtranghonnhan";
                     return false;
                 }
                 if ($("#trinhdohocvan").val() == null || $("#trinhdohocvan").val() === "") {
                     $("#trinhdohocvan").css('box-shadow', '0px 0px 7px red');
                     alert("Trình độ học vấn chưa chọn!");
+                    location.href = "#trinhdohocvan";
                     return false;
                 }
                 if ($("#sdt").val() == null || $("#sdt").val() === "") {
                     $("#sdt").css('box-shadow', '0px 0px 7px red');
                     alert("Chưa nhập số điện thoại!");
+                    location.href = "#sdt";
                     return false;
                 }
                 if (($("#sdt").val().length == 10)) {
-                    return true;
+                    console.log('oki cccd');
                 }
                 else{
                     $("#sdt").css('box-shadow', '0px 0px 7px red');
-                    alert("Số điện thoại phải đủ 10 số! "+ $("#sdt").val().length);
+                    alert("Số điện thoại phải đủ 10 số! ");
+                    location.href = "#sdt";
                     return false;
                 }
                 if ($("#dienthoai").val() == null || $("#dienthoai").val() === "") {
                     $("#dienthoai").css('box-shadow', '0px 0px 7px red');
                     alert("Điện thoại chưa chọn!");
+                    location.href = "#dienthoai";
                     return false;
                 }
 
@@ -883,165 +895,195 @@
                 if ($("#diachinoiohientai").val() == null || $("#diachinoiohientai").val() === "") {
                     $("#diachinoiohientai").css('box-shadow', '0px 0px 7px red');
                     alert("Địa chỉ nơi ở hiện tại không được để trống!");
+                    location.href = "#diachinoiohientai";
                     return false;
                 }
                 if ($("#thoigiansinhsong").val() == null || $("#thoigiansinhsong").val() === "") {
                     $("#thoigiansinhsong").css('box-shadow', '0px 0px 7px red');
                     alert("Thời gian sinh sống không được để trống!");
+                    location.href = "#thoigiansinhsong";
                     return false;
                 }
 
                 if ($("#doivoikhachthuetro").val() == null || $("#doivoikhachthuetro").val() === "") {
                     $("#doivoikhachthuetro").css('box-shadow', '0px 0px 7px red');
                     alert("Đối với khách thuê trọ không được để trống!");
+                    location.href = "#doivoikhachthuetro";
                     return false;
                 }
                 if ($("#diachihokhau").val() == null || $("#diachihokhau").val() === "") {
                     $("#diachihokhau").css('box-shadow', '0px 0px 7px red');
                     alert("Địa chỉ hộ khẩu không được để trống!");
+                    location.href = "#diachihokhau";
                     return false;
                 }
                 if ($("#mucdichvay").val() == null || $("#mucdichvay").val() === "") {
                     $("#mucdichvay").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#mucdichvay").attr("name")) + "!");
+                    location.href = "#mucdichvay";
                     return false;
                 }
                 if ($("#sotiendenghivay").val() == null || $("#sotiendenghivay").val() === "") {
                     $("#sotiendenghivay").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#sotiendenghivay").attr("name")) + "!");
+                    location.href = "#sotiendenghivay";
                     return false;
                 }
                 if ($("#thoigiangip").val() == null || $("#thoigiangip").val() === "") {
                     $("#thoigiangip").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#thoigiangip").attr("name")) + "!");
+                    location.href = "#thoigiangip";
                     return false;
                 }
                 if ($("#nguonthunhap").val() == null || $("#nguonthunhap").val() === "") {
                     $("#nguonthunhap").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#nguonthunhap").attr("name")) + "!");
+                    location.href = "#nguonthunhap";
                     return false;
                 }
                 if ($("#tencongty").val() == null || $("#tencongty").val() === "") {
                     $("#tencongty").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#tencongty").attr("name")) + "!");
+                    location.href = "#tencongty";
                     return false;
                 }
                 if ($("#diachicongty").val() == null || $("#diachicongty").val() === "") {
                     $("#diachicongty").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#diachicongty").attr("name")) + "!");
+                    location.href = "#diachicongty";
                     return false;
                 }
                 if ($("#thoigianlamviec").val() == null || $("#thoigianlamviec").val() === "") {
                     $("#thoigianlamviec").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#thoigianlamviec").attr("name")) + "!");
+                    location.href = "#thoigianlamviec";
                     return false;
                 }
                 if ($("#tongthunhap").val() == null || $("#tongthunhap").val() === "") {
                     $("#tongthunhap").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#tongthunhap").attr("name")) + "!");
+                    location.href = "#tongthunhap";
                     return false;
                 }
                 if ($("#vitri").val() == null || $("#vitri").val() === "") {
                     $("#vitri").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#vitri").attr("name")) + "!");
+                    location.href = "#vitri";
                     return false;
                 }
                 if ($("#hotenvochong").val() == null || $("#hotenvochong").val() === "") {
                     $("#hotenvochong").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#hotenvochong").attr("name")) + "!");
+                    location.href = "#hotenvochong";
                     return false;
                 }
                 if ($("#ngaysinhvochong").val() == null || $("#ngaysinhvochong").val() === "") {
                     $("#ngaysinhvochong").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#ngaysinhvochong").attr("name")) + "!");
+                    location.href = "#ngaysinhvochong";
                     return false;
                 }
                 if ($("#CMNDvochong").val() == null || $("#CMNDvochong").val() === "") {
                     $("#CMNDvochong").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#CMNDvochong").attr("name")) + "!");
+                    location.href = "#CMNDvochong";
                     return false;
                 }
                 if (($("#CMNDvochong").val().length == 9) || ($("#CMNDvochong").val().length == 12)) {
-                    return true;
+                    console.log('oki cccd');
                 }
                 else{
                     $("#CMNDvochong").css('box-shadow', '0px 0px 7px red');
                     alert(($("#CMNDvochong").attr("name")) + "phải nhập đủ 9 hoặc 12 số! ");
+                    location.href = "#CMNDvochong";
                     return false;
                 }
                 if ($("#sdtvochong").val() == null || $("#sdtvochong").val() === "") {
                     $("#sdtvochong").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#sdtvochong").attr("name")) + "!");
+                    location.href = "#sdtvochong";
                     return false;
                 }
                 if (($("#sdtvochong").val().length == 10)) {
-                    return true;
+                    console.log('oki cccd');
                 }
                 else{
                     $("#sdtvochong").css('box-shadow', '0px 0px 7px red');
                     alert(($("#sdtvochong").attr("name")) + "phải nhập đủ 10 số! ");
+                    location.href = "#sdtvochong";
                     return false;
                 }
                 if ($("#hotennguoithan").val() == null || $("#hotennguoithan").val() === "") {
                     $("#hotennguoithan").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#hotennguoithan").attr("name")) + "!");
+                    location.href = "#hotennguoithan";
                     return false;
                 }
 
                 if ($("#ngaysinhnguoithan").val() == null || $("#ngaysinhnguoithan").val() === "") {
                     $("#ngaysinhnguoithan").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#ngaysinhnguoithan").attr("name")) + "!");
+                    location.href = "#ngaysinhnguoithan";
                     return false;
                 }
                 if ($("#sdtnguoithan").val() == null || $("#sdtnguoithan").val() === "") {
                     $("#sdtnguoithan").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#sdtnguoithan").attr("name")) + "!");
+                    location.href = "#sdtnguoithan";
                     return false;
                 }
                 if (($("#sdtnguoithan").val().length == 10)) {
-                    return true;
+                    console.log('oki cccd');
                 }
                 else{
                     $("#sdtnguoithan").css('box-shadow', '0px 0px 7px red');
                     alert(($("#sdtnguoithan").attr("name")) + "phải nhập đủ 10 số! ");
+                    location.href = "#sdtnguoithan";
                     return false;
                 }
 
                 if ($("#hotendongnghiep").val() == null || $("#hotendongnghiep").val() === "") {
                     $("#hotendongnghiep").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#hotendongnghiep").attr("name")) + "!");
+                    location.href = "#hotendongnghiep";
                     return false;
                 }
                 if ($("#ngaysinhdongnghiep").val() == null || $("#ngaysinhdongnghiep").val() === "") {
                     $("#ngaysinhdongnghiep").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#ngaysinhdongnghiep").attr("name")) + "!");
+                    location.href = "#ngaysinhdongnghiep";
                     return false;
                 }
                 if ($("#sdtdongnghiep").val() == null || $("#sdtdongnghiep").val() === "") {
                     $("#sdtdongnghiep").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa nhập "+ ($("#sdtdongnghiep").attr("name")) + "!");
+                    location.href = "#sdtdongnghiep";
                     return false;
                 }
                 if (($("#sdtdongnghiep").val().length == 10)) {
-                    return true;
+                    console.log('oki cccd');
                 }
                 else{
                     $("#sdtdongnghiep").css('box-shadow', '0px 0px 7px red');
                     alert(($("#sdtdongnghiep").attr("name")) + "phải nhập đủ 10 số! ");
+                    location.href = "#sdtdongnghiep";
                     return false;
                 }
 
 
                 if ($("#filenamefile1").val() == null || $("#filenamefile1").val() === "") {
                     alert("Bạn chưa Chụp CCCD/CMND Mặt trước !");
+                    location.href = "#filenamefile1";
                     return false;
                 }
                 if ($("#filenamefile2").val() == null || $("#filenamefile2").val() === "") {
                     alert("Bạn chưa Chụp CCCD/CMND Mặt sau !");
+                    location.href = "#filenamefile2";
                     return false;
                 }
                 if ($("#filenamefile3").val() == null || $("#filenamefile3").val() === "") {
                     alert("Bạn chưa Chụp hình chân dung !");
+                    location.href = "#filenamefile3";
                     return false;
                 }
                 return true;
