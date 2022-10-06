@@ -890,7 +890,7 @@
                 }
                 if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
                     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-                    alert("Căn Cước công dân không được để trống!");
+                    alert("CCCD/CMND không được để trống hoặc chỉ nhập số!");
                     location.href = "#CCCD";
                     return false;
                 }
@@ -899,11 +899,11 @@
                 }
                 else{
                     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-                    alert("Căn Cước công dân phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
+                    alert("CCCD/CMND phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
                     location.href = "#CCCD";
                     return false;
                 }
-                checkNumber($("#CCCD").attr("name"), $("#CCCD").val())
+                // checkNumber($("#CCCD").attr("name"), $("#CCCD").val())
                 if ($("#gioitinh").val() == null || $("#gioitinh").val() === "") {
                     $("#gioitinh").css('box-shadow', '0px 0px 7px red');
                     alert("Giới tính chưa chọn!");
@@ -1020,7 +1020,7 @@
                     location.href = "#tongthunhap";
                     return false;
                 }
-                checkNumber($("#tongthunhap").attr("name"), $("#tongthunhap").val())
+                // checkNumber($("#tongthunhap").attr("name"), $("#tongthunhap").val())
                 if ($("#vitri").val() == null || $("#vitri").val() === "") {
                     $("#vitri").css('box-shadow', '0px 0px 7px red');
                     alert("Bạn chưa chọn "+ ($("#vitri").attr("name")) + "!");
