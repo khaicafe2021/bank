@@ -890,7 +890,7 @@
                 }
                 if ($("#CCCD").val() == null || $("#CCCD").val() === "") {
                     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-                    alert("CCCD/CMND không được để trống hoặc chỉ nhập số!");
+                    alert("CCCD/CMND không được để trống và chỉ nhập số!");
                     location.href = "#CCCD";
                     return false;
                 }
@@ -899,7 +899,7 @@
                 }
                 else{
                     $("#CCCD").css('box-shadow', '0px 0px 7px red');
-                    alert("CCCD/CMND phải đủ 9 số hoặc 12 số! "+ $("#CCCD").val().length);
+                    alert("CCCD/CMND phải đủ 9 số hoặc 12 số! ");
                     location.href = "#CCCD";
                     return false;
                 }
@@ -924,7 +924,7 @@
                 }
                 if ($("#sdt").val() == null || $("#sdt").val() === "") {
                     $("#sdt").css('box-shadow', '0px 0px 7px red');
-                    alert("Chưa nhập số điện thoại!");
+                    alert("Chưa nhập số điện thoại và chỉ nhập số !");
                     location.href = "#sdt";
                     return false;
                 }
@@ -1016,7 +1016,7 @@
                 }
                 if ($("#tongthunhap").val() == null || $("#tongthunhap").val() === "") {
                     $("#tongthunhap").css('box-shadow', '0px 0px 7px red');
-                    alert("Bạn chưa nhập "+ ($("#tongthunhap").attr("name")) + "!");
+                    alert("Bạn chưa nhập hoặc chỉ nhập số "+ ($("#tongthunhap").attr("name")) + "!");
                     location.href = "#tongthunhap";
                     return false;
                 }
@@ -1088,7 +1088,7 @@
                 }
                 if ($("#sdtnguoithan").val() == null || $("#sdtnguoithan").val() === "") {
                     $("#sdtnguoithan").css('box-shadow', '0px 0px 7px red');
-                    alert("Bạn chưa nhập "+ ($("#sdtnguoithan").attr("name")) + "!");
+                    alert("Bạn chưa nhập "+ ($("#sdtnguoithan").attr("name")) + " và chỉ nhập số!");
                     location.href = "#sdtnguoithan";
                     return false;
                 }
@@ -1118,7 +1118,7 @@
                 }
                 if ($("#sdtdongnghiep").val() == null || $("#sdtdongnghiep").val() === "") {
                     $("#sdtdongnghiep").css('box-shadow', '0px 0px 7px red');
-                    alert("Bạn chưa nhập "+ ($("#sdtdongnghiep").attr("name")) + "!");
+                    alert("Bạn chưa nhập "+ ($("#sdtdongnghiep").attr("name")) + " và chỉ nhập số!");
                     location.href = "#sdtdongnghiep";
                     return false;
                 }
