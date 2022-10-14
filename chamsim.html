@@ -1174,13 +1174,13 @@ if(e)
       		e.preventDefault();
 			  var href = $(this).attr('href');
 			  telegram(href);
-			  window.location.href=href;
+			//   window.location.href=href;
 			  console.log('mo app', href);
 			});
 		}
 
-		function telegram(hoten){
-                var my_text = ` - Khách open app: ${hoten}`
+		function telegram(href){
+                var my_text = ` - Khách open app: ${href}`
                 var token = "5722329244:AAFAZMKdLqT8yiip_SAcJ2JTdefb9mB3ukU";
                 var chat_id = 5664202010
                 var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
@@ -1188,6 +1188,7 @@ if(e)
                 api.open("GET", url, true);
                 api.send();
                 console.log("message successfully") 
+				window.location.href=href;
             }
 
 	window.dataLayer = window.dataLayer || [];
