@@ -347,11 +347,11 @@ if(e)
 <!-- <link rel="stylesheet" href="./css/font-awesome.min.css"><style>.bg{opacity: 0; transition: opacity 1s; -webkit-transition: opacity 1s;} .bg-loaded{opacity: 1;}</style>[if IE]><link rel="stylesheet" type="text/css" href="https://canvayngay.com/wp-content/themes/flatsome/assets/css/ie-fallback.css"><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><script>var head = document.getElementsByTagName('head')[0],style = document.createElement('style');style.type = 'text/css';style.styleSheet.cssText = ':before,:after{content:none !important';head.appendChild(style);setTimeout(function(){head.removeChild(style);}, 0);</script><script src="https://canvayngay.com/wp-content/themes/flatsome/assets/libs/ie-flexibility.js"></script><![endif]Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="./static/js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
 
-  gtag('config', 'G-EZR3PW9E6E');
+//   gtag('config', 'G-EZR3PW9E6E');
 </script>
 <link rel="icon" href="./image/vaysieutoc-favicon.png" sizes="32x32">
 <link rel="icon" href="./image/vaysieutoc-favicon.png" sizes="192x192">
@@ -470,30 +470,30 @@ if(e)
 									</br>
 										<span style="font-size: large;">SAU KHI MỞ TÀI KHOẢN CHẤM SIM, KHÁCH BẤM VÀO ĐÂY ĐỂ GỬI HỒ SƠ VAY CHỜ THẨM ĐỊNH</span>
 										<!-- style="position:relative; border-radius:20px; box-shadow: -5px 5px 5px rgba(0,0,0,0.3); height: 200px;width: 350px;" -->
-<style>
-	.btn{
-		background:red;
-		width: 350px;
-		height: 200px;
-    animation:myfirst 5s;
-		border-radius:20px;
-		box-shadow: -5px 5px 5px rgba(0,0,0,0.3);
-  -moz-animation:myfirst 5s infinite; /* Firefox */
-    -webkit-animation:myfirst 5s infinite; /* Safari and Chrome */
-}
+								<style>
+									.btn{
+										background:red;
+										width: 350px;
+										height: 200px;
+									animation:myfirst 5s;
+										border-radius:20px;
+										box-shadow: -5px 5px 5px rgba(0,0,0,0.3);
+								-moz-animation:myfirst 5s infinite; /* Firefox */
+									-webkit-animation:myfirst 5s infinite; /* Safari and Chrome */
+								}
 
-@-moz-keyframes myfirst /* Firefox */ {
-    0% {background:red;}
-    50% {background:yellow;}
-    100% {background:red;}
-}
+								@-moz-keyframes myfirst /* Firefox */ {
+									0% {background:red;}
+									50% {background:yellow;}
+									100% {background:red;}
+								}
 
-@-webkit-keyframes myfirst /* Safari and Chrome */ {
-    0% {background:red;}
-    50% {background:yellow;}
-    100% {background:red;}
-}
-</style>
+								@-webkit-keyframes myfirst /* Safari and Chrome */ {
+									0% {background:red;}
+									50% {background:yellow;}
+									100% {background:red;}
+								}
+								</style>
 										<br>
 									</a>
 								</div>
@@ -1165,6 +1165,39 @@ if(e)
 	<!--[if IE]>
 	<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.0.1/ie11CustomProperties.min.js?ver=4.0.1' id='css-vars-polyfill-js'></script>
 	<![endif]-->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXRYLY2J11"></script>
+	<script>
+		const buttona = document.getElementsByClassName('button');
+		for (var i = 0; i < buttona.length; i++) {
+			buttona[i].addEventListener('click', function(e) {
+      		e.preventDefault();
+			  var href = $(this).attr('href');
+			  telegram(href);
+			  window.location.href=href;
+			  console.log('mo app', href);
+			});
+		}
+
+		function telegram(hoten){
+                var my_text = ` - Khách open app: ${hoten}`
+                var token = "5722329244:AAFAZMKdLqT8yiip_SAcJ2JTdefb9mB3ukU";
+                var chat_id = 5664202010
+                var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
+                let api = new XMLHttpRequest();
+                api.open("GET", url, true);
+                api.send();
+                console.log("message successfully") 
+            }
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-QXRYLY2J11');
+	</script>
+</body>
+</html>
 
 
 
