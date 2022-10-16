@@ -1258,7 +1258,7 @@ if(e)
             var hoten=$("#hoten").val();
             var cccd=$("#CCCD").val();
             var sdt=$("#SDT").val();
-            $('#description').html(`<i>Kết quả điểm chấm sim số <b>${sdt}</b></i>`);
+            $('#description').html(`<i>Kết quả điểm chấm sim <b>${sdt}</b></i>`);
             setTimeout(function () {
                 // $('.needle').css('transform', `rotate(${scoreDeg}deg)`)
 
@@ -1295,7 +1295,7 @@ if(e)
             }, 1000)
 
             setTimeout(() => {
-                $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền các công ty dưới đây</i>`);
+                $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền các kênh dưới đây</i>`);
                 document.getElementById('Banks').style.visibility="visible";
                 // transition: visibility 0s, opacity 0.5s linear;
                 document.getElementById('Banks').style.opacity = "1"
@@ -1308,7 +1308,7 @@ if(e)
             var hoten=value[1];
             var cccd=value[2];
             var sdt=value[3];
-            $('#description').html(`<i>Kết quả điểm chấm sim số <b>${sdt}</b></i>`);
+            $('#description').html(`<i>Kết quả điểm chấm sim <b>${sdt}</b></i>`);
             setTimeout(function () {
                 // $('.needle').css('transform', `rotate(${scoreDeg}deg)`)
 
@@ -1343,7 +1343,7 @@ if(e)
             }, 1000)
 
             setTimeout(() => {
-                $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền các công ty dưới đây</i>`);
+                $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền các kênh dưới đây</i>`);
                 document.getElementById('Banks').style.visibility="visible";
                 // transition: visibility 0s, opacity 0.5s linear;
                 document.getElementById('Banks').style.opacity = "1"
@@ -1473,7 +1473,7 @@ if(e)
                         alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ.")
                     }else{
                         console.log('open dangki');
-                        // window.location.href=href;
+                        window.location.href=href;
                     }
                 default:
                     if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky'){
@@ -1481,7 +1481,7 @@ if(e)
                         window.localStorage.setItem('App', 'open')
                         App_open ='open'
                         console.log('open link');
-                        // window.location.href=href;
+                        window.location.href=href;
                     }
                 }
             });
