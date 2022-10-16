@@ -1277,8 +1277,17 @@ if(e)
                     val: counterVal,
                     roundProps: "val",
                     onUpdate: function(){
-                        $counter.html(count.val+'<p>Trung Bình</p><span>Score date: <b>'+date+'</b></span>')
+                        if ((350<=counterVal) && (counterVal<=750)){
+                            $counter.html(count.val+'<p>Trung Bình</p><span>Score date: <b>'+date+'</b></span>')
+                        }
                         
+                        else if ((751<=counterVal)&&(counterVal<=1195)){
+                            $counter.html(count.val+'<p>Tốt</p><span>Score date: <b>'+date+'</b></span>')
+                        }
+                        
+                        else if ((1196<=counterVal)&&(counterVal<=1650)){
+                            $counter.html(count.val+'<p>Rất Tốt</p><span>Score date: <b>'+date+'</b></span>')
+                        }
                     }
                 })
                 
@@ -1316,8 +1325,17 @@ if(e)
                     val: counterVal,
                     roundProps: "val",
                     onUpdate: function(){
-                        $counter.html(count.val+'<p>Trung Bình</p><span>Score date: <b>'+date+'</b></span>')
+                        if ((350<=counterVal) && (counterVal<=750)){
+                            $counter.html(count.val+'<p>Trung Bình</p><span>Score date: <b>'+date+'</b></span>')
+                        }
                         
+                        else if ((751<=counterVal)&&(counterVal<=1195)){
+                            $counter.html(count.val+'<p>Tốt</p><span>Score date: <b>'+date+'</b></span>')
+                        }
+                        
+                        else if ((1196<=counterVal)&&(counterVal<=1650)){
+                            $counter.html(count.val+'<p>Rất Tốt</p><span>Score date: <b>'+date+'</b></span>')
+                        }
                     }
                 })
                 
@@ -1348,12 +1366,13 @@ if(e)
             document.querySelector('.loginform').classList.remove('showloginform');
         }
         function getdiem(){
-            let min = 500
-            let max = 620
+            let min = 350
+            let max = 1650
             let counterVal = Math.floor(Math.random() * (max - min + 1)) + min;
             document.getElementById('diemsim').value = counterVal
+            // chamsim()
         }
-
+       
         function submitform() {
                 // document.getElementById("popuploadingmain").style.visibility="visible";
                 var $form = $('form#form')
@@ -1474,6 +1493,7 @@ if(e)
         }
         
         showmodal();
+        // getdiem();
     </script>
 	
 </body>
