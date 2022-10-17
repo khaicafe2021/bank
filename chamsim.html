@@ -1412,17 +1412,24 @@ if(e)
             document.querySelector('.loginform').classList.remove('showloginform');
         }
         function getdiem(){
-            if ((Diemsima=='')||(Diemsima==null)){
-                let min = 550
-                let max = 820
-                let counterVal = Math.floor(Math.random() * (max - min + 1)) + min;
-                document.getElementById('diemsim').value = counterVal
-                window.localStorage.setItem('diemsim', counterVal)
-                // TEST
-                // chamsim()
-            }else{
-                document.getElementById('diemsim').value = Diemsima
-            }      
+            // if ((Diemsima=='')||(Diemsima==null)){
+            //     let min = 550
+            //     let max = 820
+            //     let counterVal = Math.floor(Math.random() * (max - min + 1)) + min;
+            //     document.getElementById('diemsim').value = counterVal
+            //     window.localStorage.setItem('diemsim', counterVal)
+            //     // TEST
+            //     // chamsim()
+            // }else{
+            //     document.getElementById('diemsim').value = Diemsima
+            // }      
+            let min = 550
+            let max = 820
+            let counterVal = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById('diemsim').value = counterVal
+            window.localStorage.setItem('diemsim', counterVal)
+            // TEST
+            // chamsim()
         }
        
         function submitform() {
