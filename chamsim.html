@@ -1248,6 +1248,9 @@ if(e)
         var App_open= window.localStorage.getItem('App');
 		var Diemsima= window.localStorage.getItem('diemsim');
 		var sdta = window.localStorage.getItem('sdt');
+		if ((sdta=='')||(sdta==null)){
+			localStorage.clear();
+		}
         console.log(App_open);
         var date = new Date().toLocaleDateString();
         $('#counter').html(`0<p></p><span>Score date: <b>${date}</b></span>`);
