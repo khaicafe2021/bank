@@ -1534,6 +1534,15 @@ document.ondragstart = function() { return false;}
                 location.href = "#SDT";
                 return false;
             }
+            if (($("#SDT").val().length == 10)) {
+                    console.log('oki cccd');
+                }
+                else{
+                    $("#SDT").css('box-shadow', '0px 0px 7px red');
+                    alert("Số điện thoại phải đủ 10 số! ");
+                    location.href = "#SDT";
+                    return false;
+                }
             return true;
         }
 
