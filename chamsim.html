@@ -749,14 +749,6 @@ document.ondragstart = function() { return false;}
                                         <br>
                                         <span style="font-size: large;">MỞ TÀI KHOẢN MBBANK MIỄN PHÍ</span>
                                     </a>
-                                    <a id='OCBBank' href="https://play.google.com/store/apps/details?id=com.ocb.omniextra" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
-                                        <span style="font-size: large;">OCB-Bank</span>
-                                        <br>
-                                        <img src="./image/imagebank/ocb.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-                                        <br>
-                                        <span style="font-size: large;">MỞ TÀI KHOẢN OCB-Bank MIỄN PHÍ</span>
-                                    </a>
-                                    
                                     <a id='VPBank' href="https://mfast.vn/vpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VPBANK</span>
                                         <br>
@@ -772,7 +764,13 @@ document.ondragstart = function() { return false;}
                                         <br>
                                         <span style="font-size: large;">MỞ TÀI KHOẢN KBANK MIỄN PHÍ</span>
                                     </a>
-                                    
+                                    <a id='OCBBank' href="https://play.google.com/store/apps/details?id=com.ocb.omniextra" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">OCB-Bank</span>
+                                        <br>
+                                        <img src="./image/imagebank/ocb.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN OCB-Bank MIỄN PHÍ</span>
+                                    </a>
                                     <a id='CIMBBank' href="https://mfast.vn/cimb/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">CIMBBANK</span>
                                         <br>
@@ -1551,6 +1549,7 @@ document.ondragstart = function() { return false;}
             document.getElementById("popuploadingmain").style.visibility="visible";
 			  var href = $(this).attr('href');
               var idbank = $(this).attr('id');
+              var sdta=$("#SDT").val();
               
             const url = "https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec";  // <--- Please set the URL of Web Apps.
             const qs = new URLSearchParams({app: 'CaiApp', sdt: sdta, idbank: idbank, date: datetimes});
