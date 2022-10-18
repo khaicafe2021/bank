@@ -254,20 +254,17 @@ document.ondragstart = function() { return false;}
 	document.oncontextmenu = nocontext;
 </script>
 
-<script id="wpcp_css_disable_selection" type="text/javascript">
-var e = document.getElementsByTagName('body')[0];
-if(e)
-{
-	e.setAttribute('unselectable',"on");
-}
-
-</script>
-<link rel="icon" href="./image/vaysieutoc-favicon.png" sizes="32x32">
-<link rel="icon" href="./image/vaysieutoc-favicon.png" sizes="192x192">
-<link rel="apple-touch-icon" href="./image/vaysieutoc-favicon.png">
-<meta name="msapplication-TileImage" content="./image/vaysieutoc-favicon.png">
-
-
+    <script id="wpcp_css_disable_selection" type="text/javascript">
+    var e = document.getElementsByTagName('body')[0];
+    if(e)
+    {
+        e.setAttribute('unselectable',"on");
+    }
+    </script>
+    <link rel="icon" href="./image/vaysieutoc-favicon.png" sizes="32x32">
+    <link rel="icon" href="./image/vaysieutoc-favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="./image/vaysieutoc-favicon.png">
+    <meta name="msapplication-TileImage" content="./image/vaysieutoc-favicon.png">
 	<title>Đăng ký Vay</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 	
@@ -728,7 +725,7 @@ if(e)
                                     
                                     </div>
                                     <!-- id="cakebanks"  -->
-                                    <a href="https://mfast.vn/tnex/777751" class="button" style="background: green;border-radius: 20px; box-shadow: -5px 5px 5px rgba(0,0,0,0.3); width: 350px;">
+                                    <a id='MSBank' href="https://mfast.vn/tnex/777751" class="button" style="background: green;border-radius: 20px; box-shadow: -5px 5px 5px rgba(0,0,0,0.3); width: 350px;">
                                         <span style="font-size: large;">MSBank</span>
                                         <br>
                                         <img src="./image/imagebank/msb.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
@@ -736,7 +733,7 @@ if(e)
                                         <span style="font-size: large;">MỞ TÀI KHOẢN MSB MIỄN PHÍ</span>
                                     </a>
                                     
-                                    <a href="https://mfast.vn/cake/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='CakeBank' href="https://mfast.vn/cake/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">CAKE BANK</span>
                                         <br>
                                         <img src="./image/imagebank/cakebank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
@@ -744,15 +741,22 @@ if(e)
                                         <span style="font-size: large;">MỞ TÀI KHOẢN VPB MIỄN PHÍ</span>
                                     </a>
                                     
-                                    <a href="https://mb.mfast.vn?saleCode=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='MBBank' href="https://mb.mfast.vn?saleCode=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">MBBANK</span>
                                         <br>
                                         <img src="./image/imagebank/mbbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
                                         <br>
                                         <span style="font-size: large;">MỞ TÀI KHOẢN MBBANK MIỄN PHÍ</span>
                                     </a>
+                                    <a id='OCBBank' href="https://play.google.com/store/apps/details?id=com.ocb.omniextra" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">OCB-Bank</span>
+                                        <br>
+                                        <img src="./image/imagebank/ocb.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN OCB-Bank MIỄN PHÍ</span>
+                                    </a>
                                     
-                                    <a href="https://mfast.vn/vpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='VPBank' href="https://mfast.vn/vpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VPBANK</span>
                                         <br>
                                         <img src="./image/imagebank/vpbanka.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
@@ -760,7 +764,7 @@ if(e)
                                         <span>MỞ TÀI KHOẢN VPBANK MIỄN PHÍ</span>
                                     </a>
                                     
-                                    <a href="https://mfast.vn/kbank/?code=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='KBank' href="https://mfast.vn/kbank/?code=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">KBANK</span>
                                         <br>
                                         <img src="./image/imagebank/kbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
@@ -768,7 +772,7 @@ if(e)
                                         <span style="font-size: large;">MỞ TÀI KHOẢN KBANK MIỄN PHÍ</span>
                                     </a>
                                     
-                                    <a href="https://mfast.vn/cimb/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='CIMBBank' href="https://mfast.vn/cimb/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">CIMBBANK</span>
                                         <br>
                                         <img src="./image/imagebank/cimbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
@@ -776,7 +780,7 @@ if(e)
                                         <span style="font-size: large;">MỞ TÀI KHOẢN CIMBBANK MIỄN PHÍ</span>
                                     </a>
                                     
-                                    <a href="https://mfast.vn/tpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='TPBank' href="https://mfast.vn/tpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">TPBANK</span>
                                         <br>
                                         <img src="./image/imagebank/tpbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
@@ -784,21 +788,21 @@ if(e)
                                         <span style="font-size: large;">MỞ TÀI KHOẢN TPBANK MIỄN PHÍ</span>
                                     </a>
                                     
-                                    <a href="https://mfast.vn/vib_plus_2in1/777751" class="button" style="background: green;border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='VIPBank' href="https://mfast.vn/vib_plus_2in1/777751" class="button" style="background: green;border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VIB Bank</span>
                                         <br>
                                         <img src="./image/imagebank/vib.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
                                         <br>
                                         <span style="font-size: large;">ĐĂNG KÝ MỞ THẺ TÍN DỤNG VIB HẠN MỨC 50 TRIỆU</span>
                                     </a>
-                                    <a href="https://mfast.vn/vib_plus/777751" class="button" style="background: green;border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='VIPBank2' href="https://mfast.vn/vib_plus/777751" class="button" style="background: green;border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VIB Bank</span>
                                         <br>
                                         <img src="./image/imagebank/vib.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
                                         <br>
                                         <span style="font-size: large;">ĐĂNG KÝ MỞ THẺ TÍN DỤNG VIB HẠN MỨC 70 TRIỆU</span>
                                     </a>
-                                    <a href="https://mfast.vn/vnpay/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='VNPayBank' href="https://mfast.vn/vnpay/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VNPAY Bank</span>
                                         <br>
                                         <img src="./image/imagebank/vnpay.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
@@ -1116,7 +1120,8 @@ if(e)
     
     <!-- hide hình ảnh minh họa -->
     <div class="hidden-image">
-        <img src="./images/nhapma.png" alt="" style="padding-bottom: 20px;">
+        <img id="image-nhapma"  alt="" style="padding-bottom: 20px;">
+        <!-- src="./images/nhapma.png" -->
         <br>
         <p style="font-weight: bold;">Cài App đến bước này Khách nhập mã "M123" duyệt nhanh hồ sơ</p>
         <a id="tieptuc" style="background: green;border-radius: 5px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3); color: #fff; padding: 10px;">Tiếp tục</a>
@@ -1249,6 +1254,7 @@ if(e)
 		}
         console.log(App_open);
         var date = new Date().toLocaleDateString();
+        var datetimes = new Date().toLocaleString();
         $('#counter').html(`0<p></p><span>Score date: <b>${date}</b></span>`);
         $('#description').html(`<i>Kết quả điểm chấm sim</i>`);
 
@@ -1448,11 +1454,6 @@ if(e)
                                 }else{
                                     simdacham(data.value[0]);
                                 }
-
-
-                                // document.getElementById("popuploadingmain").style.visibility="hidden";
-                                // alert("Đã gửi hồ sơ thành công quý khách vui lòng đợi thẩm định hồ sơ trong ngày !");
-                                // window.location.href = 'https://canvayngay.com'
                             }
                         })
                 
@@ -1535,8 +1536,16 @@ if(e)
 			buttona[i].addEventListener('click', function(e) {
       		e.preventDefault();
 			  var href = $(this).attr('href');
-			//   telegram(href);
-			console.log(href);
+              var idbank = $(this).attr('id');
+              
+            const url = "https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec";  // <--- Please set the URL of Web Apps.
+            const qs = new URLSearchParams({app: 'CaiApp', sdt: sdta, idbank: idbank, date: datetimes});
+            fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify()})
+            .then(res => res.json())
+            .then(e => {console.log(e)})
+
+
+			console.log(idbank);
 			telegram_app(href)
             // switch  (href){
             //     case href=='https://mfast.vn/kbank/?code=777751':
@@ -1563,10 +1572,14 @@ if(e)
             //             // window.location.href=href;
             //         }
             //     }
-            
+            // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+		// {document.getElementById("linkzalo").href="https://zalo.me/0868975598";}
+
+
 			if (href=='https://mfast.vn/kbank/?code=777751'){
 				document.querySelector('.overlay').classList.add('showoverlay');
 				document.querySelector('.hidden-image').classList.add('show-image');
+                $("#image-nhapma").attr("src", "./images/nhapma.png");
 				hrefbank = href
 				window.localStorage.setItem('App', 'open')
 				App_open ='open'  
@@ -1581,7 +1594,18 @@ if(e)
 					console.log('open dangki');
 					window.location.href=href;
 				}
-			}else if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky'){
+            }else if (href=="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
+				document.querySelector('.overlay').classList.add('showoverlay');
+				document.querySelector('.hidden-image').classList.add('show-image');
+                $("#image-nhapma").attr("src", "./images/nhapma.png");
+				hrefbank = href
+                if( /iPhone|iPad|iPod/i.test(navigator.userAgent) )
+		            hrefbank = href
+				window.localStorage.setItem('App', 'open')
+				App_open ='open'  
+				console.log('OCBBank');
+			
+			}else if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky' && href!="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
 				 // hrefbank = href
 				 window.localStorage.setItem('App', 'open')
 				App_open ='open'
@@ -1592,7 +1616,6 @@ if(e)
 
 		}
         document.getElementById('tieptuc').onclick= function(){
-            // console.log(hrefbank, 'kikik');
             window.location.href=hrefbank
         }
         
@@ -1602,9 +1625,3 @@ if(e)
 	
 </body>
 </html>
-
-
-
-
-
-
