@@ -269,6 +269,7 @@ document.ondragstart = function() { return false;}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 	
 	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styleloading.css">
 	<!-- style của zalo chat -->
 	<style>
 		@keyframes zoom{0%{transform:scale(.5);opacity:0}50%{opacity:1}to{opacity:0;transform:scale(1)}}
@@ -1151,6 +1152,15 @@ document.ondragstart = function() { return false;}
         </form>
     </div>   
 
+    <!-- phần popup loading -->
+    <div class="pop_up_container" id="popuploadingmain">
+        <div class="pop_up">
+            <div class="centerloading">
+                <div class="ring"></div>
+               <span id="spanloading">loading...</span>
+           </div>
+        </div>
+    </div>	
     
     
 
@@ -1253,6 +1263,7 @@ document.ondragstart = function() { return false;}
 			localStorage.clear();
 		}
         console.log(App_open);
+        // document.getElementById("popuploadingmain").style.visibility="visible";
         var date = new Date().toLocaleDateString();
         var datetimes = new Date().toLocaleString();
         $('#counter').html(`0<p></p><span>Score date: <b>${date}</b></span>`);
@@ -1535,6 +1546,7 @@ document.ondragstart = function() { return false;}
 		for (var i = 0; i < buttona.length; i++) {
 			buttona[i].addEventListener('click', function(e) {
       		e.preventDefault();
+            document.getElementById("popuploadingmain").style.visibility="visible";
 			  var href = $(this).attr('href');
               var idbank = $(this).attr('id');
               
@@ -1542,12 +1554,65 @@ document.ondragstart = function() { return false;}
             const qs = new URLSearchParams({app: 'CaiApp', sdt: sdta, idbank: idbank, date: datetimes});
             fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify()})
             .then(res => res.json())
-            .then(e => {console.log(e)})
+            .then(e => {
+                console.log(e);
+                console.log(idbank);
+			    telegram_app(href)
+
+                if (href=='https://mfast.vn/kbank/?code=777751'){
+                    document.getElementById("popuploadingmain").style.visibility="hidden";
+                    document.querySelector('.overlay').classList.add('showoverlay');
+                    document.querySelector('.hidden-image').classList.add('show-image');
+                    $("#image-nhapma").attr("src", "./images/nhapma.png");
+                    hrefbank = href
+                    window.localStorage.setItem('App', 'open')
+                    App_open ='open'  
+                    console.log('kbank');
+                }else if (href=='https://canvayngay.com/dangky'){
+                    console.log('dangki');
+                    if (App_open==''|| App_open==null){
+                        location.href = "#Banks";
+                        alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ vay.")
+                        
+                    }else{
+                        console.log('open dangki');
+                        window.location.href=href;
+                    }
+                }else if (href=="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
+                    document.getElementById("popuploadingmain").style.visibility="hidden";
+                    document.querySelector('.overlay').classList.add('showoverlay');
+                    document.querySelector('.hidden-image').classList.add('show-image');
+                    $("#image-nhapma").attr("src", "./images/nhapma.png");
+                    hrefbank = href
+                    if( /iPhone|iPad|iPod/i.test(navigator.userAgent) )
+                        hrefbank = href
+                    window.localStorage.setItem('App', 'open')
+                    App_open ='open'  
+                    console.log('OCBBank');
+                
+                }else if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky' && href!="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
+                    // hrefbank = href
+                    window.localStorage.setItem('App', 'open')
+                    App_open ='open'
+                    console.log('open link');
+                    window.location.href=href;
+                }
+
+            })
+
+			
+		});
+
+		}
+        document.getElementById('tieptuc').onclick= function(){
+            window.location.href=hrefbank
+        }
+        
+        showmodal();
+        // getdiem();
 
 
-			console.log(idbank);
-			telegram_app(href)
-            // switch  (href){
+        // switch  (href){
             //     case href=='https://mfast.vn/kbank/?code=777751':
             //         document.querySelector('.overlay').classList.add('showoverlay');
             //         document.querySelector('.hidden-image').classList.add('show-image');
@@ -1574,53 +1639,6 @@ document.ondragstart = function() { return false;}
             //     }
             // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
 		// {document.getElementById("linkzalo").href="https://zalo.me/0868975598";}
-
-
-			if (href=='https://mfast.vn/kbank/?code=777751'){
-				document.querySelector('.overlay').classList.add('showoverlay');
-				document.querySelector('.hidden-image').classList.add('show-image');
-                $("#image-nhapma").attr("src", "./images/nhapma.png");
-				hrefbank = href
-				window.localStorage.setItem('App', 'open')
-				App_open ='open'  
-				console.log('kbank');
-			}else if (href=='https://canvayngay.com/dangky'){
-				console.log('dangki');
-				if (App_open==''|| App_open==null){
-                    location.href = "#Banks";
-					alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ vay.")
-                    
-				}else{
-					console.log('open dangki');
-					window.location.href=href;
-				}
-            }else if (href=="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
-				document.querySelector('.overlay').classList.add('showoverlay');
-				document.querySelector('.hidden-image').classList.add('show-image');
-                $("#image-nhapma").attr("src", "./images/nhapma.png");
-				hrefbank = href
-                if( /iPhone|iPad|iPod/i.test(navigator.userAgent) )
-		            hrefbank = href
-				window.localStorage.setItem('App', 'open')
-				App_open ='open'  
-				console.log('OCBBank');
-			
-			}else if (href!='https://mfast.vn/kbank/?code=777751' && href!='https://canvayngay.com/dangky' && href!="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
-				 // hrefbank = href
-				 window.localStorage.setItem('App', 'open')
-				App_open ='open'
-				console.log('open link');
-				window.location.href=href;
-			}
-		});
-
-		}
-        document.getElementById('tieptuc').onclick= function(){
-            window.location.href=hrefbank
-        }
-        
-        showmodal();
-        // getdiem();
     </script>
 	
 </body>
