@@ -1559,9 +1559,8 @@ document.ondragstart = function() { return false;}
                 console.log(e);
                 console.log(idbank);
 			    telegram_app(href)
-
+                document.getElementById("popuploadingmain").style.visibility="hidden";
                 if (href=='https://mfast.vn/kbank/?code=777751'){
-                    document.getElementById("popuploadingmain").style.visibility="hidden";
                     document.querySelector('.overlay').classList.add('showoverlay');
                     document.querySelector('.hidden-image').classList.add('show-image');
                     $("#image-nhapma").attr("src", "./images/nhapma.png");
@@ -1580,7 +1579,6 @@ document.ondragstart = function() { return false;}
                         window.location.href=href;
                     }
                 }else if (href=="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
-                    document.getElementById("popuploadingmain").style.visibility="hidden";
                     document.querySelector('.overlay').classList.add('showoverlay');
                     document.querySelector('.hidden-image').classList.add('show-image');
                     $("#image-nhapma").attr("src", "./images/nhapma.png");
