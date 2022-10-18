@@ -1337,6 +1337,7 @@ document.ondragstart = function() { return false;}
                 let max = 620
                 let counterVal = value[4]
                 $('#diemsim').val = counterVal
+                window.localStorage.setItem('sdt', sdt)
                 
                 let phantram = (counterVal+350)/10;
 
