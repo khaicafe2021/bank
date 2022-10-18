@@ -727,7 +727,7 @@ if(e)
                                         </a>
                                     
                                     </div>
-                            
+                                    <!-- id="cakebanks"  -->
                                     <a href="https://mfast.vn/tnex/777751" class="button" style="background: green;border-radius: 20px; box-shadow: -5px 5px 5px rgba(0,0,0,0.3); width: 350px;">
                                         <span style="font-size: large;">MSBank</span>
                                         <br>
@@ -1118,7 +1118,7 @@ if(e)
     <div class="hidden-image">
         <img src="./images/nhapma.png" alt="" style="padding-bottom: 20px;">
         <br>
-        <p style="font-weight: bold;">Cài App đến bước này nhập mã "M123" duyệt nhanh hồ sơ</p>
+        <p style="font-weight: bold;">Cài App đến bước này Khách nhập mã "M123" duyệt nhanh hồ sơ</p>
         <a id="tieptuc" style="background: green;border-radius: 5px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3); color: #fff; padding: 10px;">Tiếp tục</a>
     </div>
 
@@ -1574,7 +1574,9 @@ if(e)
 			}else if (href=='https://canvayngay.com/dangky'){
 				console.log('dangki');
 				if (App_open==''|| App_open==null){
-					alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ.")
+                    location.href = "#Banks";
+					alert("Bạn chưa mở tài khoản Bank!, Mở tài khoản Bank sau đó gửi hồ sơ vay.")
+                    
 				}else{
 					console.log('open dangki');
 					window.location.href=href;
@@ -1590,7 +1592,7 @@ if(e)
 
 		}
         document.getElementById('tieptuc').onclick= function(){
-            console.log(hrefbank, 'kikik');
+            // console.log(hrefbank, 'kikik');
             window.location.href=hrefbank
         }
         
