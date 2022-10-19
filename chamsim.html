@@ -1264,7 +1264,7 @@ document.ondragstart = function() { return false;}
         console.log(App_open);
         // document.getElementById("popuploadingmain").style.visibility="visible";
         var date = new Date().toLocaleDateString();
-        var datetimes = new Date().toLocaleString();
+        
         $('#counter').html(`0<p></p><span>Score date: <b>${date}</b></span>`);
         $('#description').html(`<i>Kết quả điểm chấm sim</i>`);
 
@@ -1569,7 +1569,7 @@ document.ondragstart = function() { return false;}
             document.getElementById("popuploadingmain").style.visibility="visible";
 			  var href = $(this).attr('href');
               var idbank = $(this).attr('id');
-            
+              var datetimes = new Date().toLocaleString();
             const url = "https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec";  // <--- Please set the URL of Web Apps.
             const qs = new URLSearchParams({app: 'CaiApp', sdt: sdta, idbank: idbank, date: datetimes});
             fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify()})
