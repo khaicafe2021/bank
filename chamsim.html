@@ -1122,7 +1122,7 @@ document.ondragstart = function() { return false;}
         <img id="image-nhapma"  alt="" style="padding-bottom: 20px;">
         <!-- src="./images/nhapma.png" -->
         <br>
-        <p style="font-weight: bold;">Cài App đến bước này Khách nhập mã "M123" duyệt nhanh hồ sơ</p>
+        <p id="noidungnhapma" style="font-weight: bold;">Cài App đến bước này Khách nhập mã "M123" duyệt nhanh hồ sơ</p>
         <a id="tieptuc" style="background: green;border-radius: 5px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3); color: #fff; padding: 10px;">Tiếp tục</a>
     </div>
 
@@ -1583,6 +1583,7 @@ document.ondragstart = function() { return false;}
                     document.querySelector('.overlay').classList.add('showoverlay');
                     document.querySelector('.hidden-image').classList.add('show-image');
                     $("#image-nhapma").attr("src", "./images/nhapma.png");
+                    $('#noidungnhapma').html(`Cài App đến bước này Khách nhập mã "M123" duyệt nhanh hồ sơ`);
                     hrefbank = href
                     window.localStorage.setItem('App', 'open')
                     App_open ='open'  
@@ -1600,10 +1601,15 @@ document.ondragstart = function() { return false;}
                 }else if (href=="https://play.google.com/store/apps/details?id=com.ocb.omniextra"){
                     document.querySelector('.overlay').classList.add('showoverlay');
                     document.querySelector('.hidden-image').classList.add('show-image');
-                    $("#image-nhapma").attr("src", "./images/nhapma.png");
-                    hrefbank = href
-                    if( /iPhone|iPad|iPod/i.test(navigator.userAgent) )
+                    $("#image-nhapma").attr("src", "./images/nhapmaocb.png");
+                    $('#noidungnhapma').html(`Cài App đến bước này Khách nhập mã "119560" duyệt nhanh hồ sơ`);
+                    // hrefbank = href
+                    if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ){
+                        hrefbank = 'https://apps.apple.com/vn/app/ng%C3%A2n-h%C3%A0ng-s%E1%BB%91-ocb-omni/id1358682577?l=vi'
+                    }else{
                         hrefbank = href
+                    }
+                        
                     window.localStorage.setItem('App', 'open')
                     App_open ='open'  
                     console.log('OCBBank');
