@@ -1623,6 +1623,8 @@ document.ondragstart = function() { return false;}
 
 		}
         document.getElementById('tieptuc').onclick= function(){
+            document.querySelector('.overlay').classList.remove('showoverlay');
+            document.querySelector('.hidden-image').classList.remove('show-image');
             window.location.href=hrefbank
         }
         
