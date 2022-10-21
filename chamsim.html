@@ -1281,8 +1281,10 @@ document.ondragstart = function() { return false;}
             var hoten=$("#hoten").val();
             var cccd=$("#CCCD").val();
             var sdt=$("#SDT").val();
-            sdta = sdt;
-            $('#description').html(`<i>Kết quả điểm chấm sim <b>${sdt}</b></i>`);
+            if ((sdta=='')||(sdta==null)){
+                sdta = sdt;
+            }
+            $('#description').html(`<i>Kết quả điểm chấm sim <b>${sdta}</b></i>`);
             setTimeout(function () {
                 // $('.needle').css('transform', `rotate(${scoreDeg}deg)`)
 
@@ -1294,7 +1296,7 @@ document.ondragstart = function() { return false;}
                 // $('#diemsim').val = counterVal
                 let counterVal = Math.floor($('#diemsim').val());
 				window.localStorage.setItem('diemsim', counterVal)
-				window.localStorage.setItem('sdt', sdt)
+				window.localStorage.setItem('sdt', sdta)
                 
                 let phantram = (counterVal+350)/10;
 
