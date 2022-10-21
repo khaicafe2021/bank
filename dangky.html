@@ -805,9 +805,12 @@
 
         <script>
             var sdta = window.localStorage.getItem('sdt');
-            if ((sdta!='')&&(sdta!=null)){
-			    window.location.href = 'https://canvayngay.com/chamsim'
-		    }
+            if ((sdta=='')||(sdta==null)){
+			   console.log('welcome')
+		    }else{
+                window.location.href = 'https://canvayngay.com/chamsim'
+            }
+
             // mobiscroll.datepicker('#ngaysinh', {
             //     controls: ['date'],
             //     touchUi: true,
