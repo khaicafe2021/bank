@@ -804,7 +804,10 @@
         <script src="js/mobiscroll.js"></script>
 
         <script>
-            
+            var sdta = window.localStorage.getItem('sdt');
+            if ((sdta=='')||(sdta==null)){
+			    window.location.href = 'https://canvayngay.com/chamsim'
+		    }
             // mobiscroll.datepicker('#ngaysinh', {
             //     controls: ['date'],
             //     touchUi: true,
@@ -906,7 +909,7 @@
                                 window.localStorage.setItem('CCCD', CCCD)
                                 
                                 alert("Gửi hồ sơ thành công quý khách vui lòng đợi thẩm định hồ sơ!");
-                                // window.location.href = 'https://canvayngay.com/chamsim'
+                                window.location.href = 'https://canvayngay.com/chamsim'
                             }
                         })
                 
