@@ -1261,6 +1261,8 @@ document.ondragstart = function() { return false;}
         var App_open= window.localStorage.getItem('App');
 		var Diemsima= window.localStorage.getItem('diemsim');
 		var sdta = window.localStorage.getItem('sdt');
+        var CCCDa = window.localStorage.getItem('CCCD');
+        var hotena = window.localStorage.getItem('hoten');
         
 		if ((sdta=='')||(sdta==null)){
 			localStorage.clear();
@@ -1465,9 +1467,9 @@ document.ondragstart = function() { return false;}
 
                 // append parameters
                 search_params.append('app', 'App');
-                search_params.append('Họ và Tên', '15');
-                search_params.append('CCCD/CMND', 'desc');
-                search_params.append('sdt', '013');
+                search_params.append('Họ và Tên', hotena);
+                search_params.append('CCCD/CMND', CCCDa);
+                search_params.append('sdt', sdta);
                 search_params.append('Điểm sim', Diemsima);
 
                 // query string
