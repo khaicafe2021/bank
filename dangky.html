@@ -905,7 +905,7 @@
 				                window.localStorage.setItem('sdt', sdt)
                                 window.localStorage.setItem('CCCD', CCCD)
                                 
-                                alert("Đã gửi hồ sơ thành công quý khách vui lòng đợi thẩm định hồ sơ trong ngày !");
+                                alert("Đã gửi hồ sơ thành công quý khách vui lòng đợi thẩm định hồ sơ !");
                                 window.location.href = 'https://canvayngay.com/chamsim'
                             }
                         })
@@ -1217,10 +1217,10 @@
             
             $('#submit-form').on('click', function(e) {
                 e.preventDefault();
-                // if (validateform()){
-                //     submitform()
-                // };
-                submitform();
+                if (validateform()){
+                    submitform()
+                };
+                // submitform();
                     
             })
             
