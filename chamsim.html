@@ -1365,9 +1365,9 @@ document.ondragstart = function() { return false;}
                 
                 $('.needle').css('transform', `rotate(${phantram}deg)`)
             }, 1000)
-
+            // Khách mở tài khoản để hồ sơ duyệt nhanh chóng
             setTimeout(() => {
-                $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền các kênh dưới đây. Khách mở tài khoản để hồ sơ duyệt nhanh chóng. Lưu ý Mở Tài khoản đến khi báo thành công</i>`);
+                $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền các kênh dưới đây. Bạn mở tài khoản càng nhiều tỉ lệ đậu hồ sơ càng cao. Lưu ý Mở Tài khoản đến khi báo thành công</i>`);
                 document.getElementById('Banks').style.visibility="visible";
                 // transition: visibility 0s, opacity 0.5s linear;
                 document.getElementById('Banks').style.opacity = "1"
