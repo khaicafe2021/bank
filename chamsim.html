@@ -1258,11 +1258,11 @@ document.ondragstart = function() { return false;}
         var hrefbank = '';
         document.getElementById('Banks').style.visibility="hidden";
         document.getElementById('Banks').style.opacity = "0"
-        var App_open= window.localStorage.getItem('App');
-		var Diemsima= window.localStorage.getItem('diemsim');
-		var sdta = window.localStorage.getItem('sdt');
-        var CCCDa = window.localStorage.getItem('CCCD');
-        var hotena = window.localStorage.getItem('hoten');
+        var App_open= localStorage.getItem('App');
+		var Diemsima= localStorage.getItem('diemsim');
+		var sdta = localStorage.getItem('sdt');
+        var CCCDa = localStorage.getItem('CCCD');
+        var hotena = localStorage.getItem('hoten');
         
 		if ((sdta=='')||(sdta==null)){
 			window.location.href = 'https://canvayngay.com/dangky'
