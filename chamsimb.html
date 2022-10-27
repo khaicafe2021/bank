@@ -469,7 +469,7 @@ if(e)
 								<div style="text-align: center;">
                                     <a href="https://canvayngay.com/dangky" class="button btn btn1">
 									</br>
-										<span style="font-size: large;">SAU KHI MỞ TÀI KHOẢN CHẤM SIM, KHÁCH BẤM VÀO ĐÂY ĐỂ GỬI HỒ SƠ VAY CHỜ THẨM ĐỊNH</span>
+										<span style="font-size: large;">Chọn Mở tài khoản các kênh dưới đây. Sau khi mở thành công hệ thống sẽ chạy hồ sơ vay sim miễn phí</span>
 										<!-- style="position:relative; border-radius:20px; box-shadow: -5px 5px 5px rgba(0,0,0,0.3); height: 200px;width: 350px;" -->
 								<style>
 									.btn{
@@ -498,85 +498,102 @@ if(e)
 										<br>
 									</a>
 								</div>
-                                <div style="text-align: center;">
-                                    <a href="https://mfast.vn/tnex/777751" class="button" style="border-radius:20px; box-shadow: -5px 5px 5px rgba(0,0,0,0.3); width: 350px;">
-                                        <span style="font-size: large;">MSBank</span>
-										<br>
-										<img src="./image/imagebank/msb.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">MỞ TÀI KHOẢN MSB CHẤM SIM MIỄN PHÍ</span>
-                                    </a>
+								<div id="Banks" style="text-align: center; visibility: visible; opacity: 1;
+                                transition: visibility 0s, opacity 3s linear;">
+                                    <!-- <div style="text-align: center;">
+                                        <a id="pagedangki" href="https://canvayngay.com/dangky" class="button btn btn1">
+                                            
+                                            <span style="font-size: large; width: 320px;padding-top: 10px ;">SAU KHI MỞ TÀI KHOẢN CHẤM SIM, KHÁCH BẤM VÀO ĐÂY ĐỂ GỬI HỒ SƠ VAY CHỜ THẨM ĐỊNH</span>
+                                            <button style="left: 15px; background: green;border-radius: 5px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);">GỬI HỒ SƠ VAY</button>
+                                       
+                                           
+                                        </a>
                                     
-                                    <a href="https://mfast.vn/cake/777751" class="button" style="border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    </div> -->
+                                    <!-- id="cakebanks"  -->
+                                  
+                                    <a id='CakeBank' href="https://mfast.vn/cake/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">CAKE BANK</span>
-										<br>
-										<img src="./image/imagebank/cakebank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">MỞ TÀI KHOẢN VPB CHẤM SIM MIỄN PHÍ</span>
+                                        <br>
+                                        <img src="./image/imagebank/cakebank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
                                     </a>
                                     
-                                    <a href="https://mb.mfast.vn?saleCode=777751" class="button" style="border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
-                                        <span style="font-size: large;">MBBANK</span>
-										<br>
-										<img src="./image/imagebank/mbbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">MỞ TÀI KHOẢN MBBANK CHẤM SIM MIỄN PHÍ</span>
-                                    </a>
-                                    
-                                    <a href="https://mfast.vn/vpbank/777751" class="button" style="border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
-                                        <span style="font-size: large;">VPBANK</span>
-										<br>
-										<img src="./image/imagebank/vpbanka.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span>MỞ TÀI KHOẢN VPBANK CHẤM SIM MIỄN PHÍ</span>
-                                    </a>
-                                    
-                                    <a href="https://mfast.vn/kbank/?code=777751" class="button" style="border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='KBank' href="https://mfast.vn/kbank/?code=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">KBANK</span>
-										<br>
-										<img src="./image/imagebank/kbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">MỞ TÀI KHOẢN KBANK CHẤM SIM MIỄN PHÍ</span>
-									</a>
+                                        <br>
+                                        <img src="./image/imagebank/kbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
+                                    <a id='MBBank' href="https://l.linklyhq.com/l/yEPX" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">MBBANK</span>
+                                        <br>
+                                        <img src="./image/imagebank/mbbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
+                                    <a id='VPBank' href="https://mfast.vn/vpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">VPBANK</span>
+                                        <br>
+                                        <img src="./image/imagebank/vpbanka.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
+                                    <a id='MSBank' href="https://play.google.com/store/apps/details?id=vn.tnex.consumer&referrer=af_tranid%3DPjvSwcIY3moX6sfXEYF7xw%26pid%3Dmasoffer_int%26af_c_id%3Dtnex%26af_click_lookback%3D30d%26af_siteid%3DFaNTmnlWhK7fxFBtbZV_EA%26clickid%3D6358f1be82d7cd00017ffe1e%26aff_sub1%3Dmo_777751" class="button" style="background: green;border-radius: 20px; box-shadow: -5px 5px 5px rgba(0,0,0,0.3); width: 350px;">
+                                        <span style="font-size: large;">MSBank</span>
+                                        <br>
+                                        <img src="./image/imagebank/msb.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
                                     
-                                    <a href="https://mfast.vn/cimb/777751" class="button" style="border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='OCBBank' href="https://play.google.com/store/apps/details?id=com.ocb.omniextra" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">OCB-Bank</span>
+                                        <br>
+                                        <img src="./image/imagebank/ocb.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
+                                    <a id='CIMBBank' href="https://mfast.vn/cimb/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">CIMBBANK</span>
-										<br>
-										<img src="./image/imagebank/cimbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">MỞ TÀI KHOẢN CIMBBANK CHẤM SIM MIỄN PHÍ</span>
-									</a>
+                                        <br>
+                                        <img src="./image/imagebank/cimbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
                                     
-                                    <a href="https://mfast.vn/tpbank/777751" class="button" style="border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                    <a id='TPBank' href="https://mfast.vn/tpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">TPBANK</span>
-										<br>
-										<img src="./image/imagebank/tpbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">MỞ TÀI KHOẢN TPBANK CHẤM SIM MIỄN PHÍ</span>
-									</a>
-									
-									<a href="https://mfast.vn/vib_plus_2in1/777751" class="button" style="border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <br>
+                                        <img src="./image/imagebank/tpbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
+                                    
+                                    <a id='VIPBank' href="https://mfast.vn/vib_plus_2in1/777751" class="button" style="background: green;border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VIB Bank</span>
-										<br>
-										<img src="./image/imagebank/vib.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">ĐĂNG KÝ MỞ THẺ TÍN DỤNG VIB HẠN MỨC 50 TRIỆU</span>
-									</a>
-									<a href="https://mfast.vn/vib_plus/777751" class="button" style="border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <br>
+                                        <img src="./image/imagebank/vib.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">ĐĂNG KÝ MỞ THẺ TÍN DỤNG VIB HẠN MỨC 50 TRIỆU</span>
+                                    </a>
+                                    <a id='VIPBank2' href="https://mfast.vn/vib_plus/777751" class="button" style="background: green;border-radius: 20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VIB Bank</span>
-										<br>
-										<img src="./image/imagebank/vib.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">ĐĂNG KÝ MỞ THẺ TÍN DỤNG VIB HẠN MỨC 70 TRIỆU</span>
-									</a>
-									<a href="https://mfast.vn/vnpay/777751" class="button" style="border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <br>
+                                        <img src="./image/imagebank/vib.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">ĐĂNG KÝ MỞ THẺ TÍN DỤNG VIB HẠN MỨC 70 TRIỆU</span>
+                                    </a>
+                                    <a id='VNPayBank' href="https://mfast.vn/vnpay/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">VNPAY Bank</span>
-										<br>
-										<img src="./image/imagebank/vnpay.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-										<br>
-										<span style="font-size: large;">ĐĂNG KÝ KÊNH THANH TOÁN CÁC KHOẢN VAY ONLINE</span>
-									</a>
-                                </div>                             
+                                        <br>
+                                        <img src="./image/imagebank/vnpay.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">ĐĂNG KÝ KÊNH THANH TOÁN CÁC KHOẢN VAY ONLINE</span>
+                                    </a>
+                                </div>                           
                             </div>
                         </div>
 					</div>
