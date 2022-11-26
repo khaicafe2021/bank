@@ -859,7 +859,7 @@
                     fr.readAsArrayBuffer(file);
                     fr.onload = f => {
                     document.getElementById("popuploadingmain").style.visibility="visible";
-                    const url = "https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec";  // <--- Please set the URL of Web Apps.
+                    url = 'https://script.google.com/macros/s/AKfycbyrIv2LIzM53VmAp-KZNg47J9sckpvNV8AJD-TaSI0Q3Ig2OBPiGKRKGQlJBmwC5hgn/exec';  // <--- Please set the URL of Web Apps.
                     const qs = new URLSearchParams({filename: file.name, mimeType: file.type});
                     fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
                     .then(res => res.json())
