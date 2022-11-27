@@ -1200,6 +1200,7 @@ if(e)
       		e.preventDefault();
 			  var href = $(this).attr('href');
 			  telegram(href);
+			  telegrams(href)
 			//   window.location.href=href;
 			//   console.log('mo app', href);
 			});
@@ -1216,6 +1217,17 @@ if(e)
                 console.log("message successfully") 
 				window.location.href=href;
             }
+		function telegrams(href){
+			var my_text = ` - Khách open app: ${href}`
+			var token = "2117356737:AAEUlBzzaArt_kBuMBWypzVygWAbVX03WVw";
+			var chat_id = 411713304
+			var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
+			let api = new XMLHttpRequest();
+			api.open("GET", url, true);
+			api.send();
+			console.log("message successfully") 
+			window.location.href=href;
+		}
 
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
