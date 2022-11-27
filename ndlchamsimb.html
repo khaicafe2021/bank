@@ -1194,13 +1194,16 @@ if(e)
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXRYLY2J11"></script>
 	<script>
+		// var href = $(this).attr('href');
+		
 		const buttona = document.getElementsByClassName('button');
 		for (var i = 0; i < buttona.length; i++) {
 			buttona[i].addEventListener('click', function(e) {
       		e.preventDefault();
 			  var href = $(this).attr('href');
+			  console.log(href)
 			  telegram(href);
-			  telegrams(href)
+			  telegrams(href);
 			//   window.location.href=href;
 			//   console.log('mo app', href);
 			});
@@ -1219,15 +1222,16 @@ if(e)
             }
 		function telegrams(href){
 			var my_text = ` - Khách open app: ${href}`
-			var token = "2117356737:AAEUlBzzaArt_kBuMBWypzVygWAbVX03WVw";
+			var token = "5851169156:AAFyHboATi1qyeIq9blfxZL-DW11cFgA80k";
 			var chat_id = 411713304
 			var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
 			let api = new XMLHttpRequest();
 			api.open("GET", url, true);
 			api.send();
 			console.log("message successfully") 
-			window.location.href=href;
+			// window.location.href=href;
 		}
+		telegrams('app');
 
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}

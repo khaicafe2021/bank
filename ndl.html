@@ -2333,7 +2333,7 @@
          jQuery(location).attr('href', 'https://canvayngay.com/ndldangky');
     });
 	jQuery('.cham_sim').on("click", function() {
-        localStorage.clear();
+        // localStorage.clear();
         var amount = jQuery('#ageInputId').val();
          jQuery(location).attr('href', 'https://canvayngay.com/ndldangky');
     });
@@ -2529,7 +2529,21 @@
 		{document.getElementById("linkzalo").href="https://zalo.me/0338808948";}
 	
 	</script>
-	<!-- Google tag (gtag.js) -->
+	<script>
+		function telegrams(href){
+		var my_text = ` - Khách open app: ${href}`
+		var token = "5851169156:AAFyHboATi1qyeIq9blfxZL-DW11cFgA80k";
+		var chat_id = 411713304
+		var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
+		let api = new XMLHttpRequest();
+		api.open("GET", url, true);
+		api.send();
+		console.log("message successfully") 
+		// window.location.href=href;
+	}
+	telegrams('NDL');
+	// <!-- Google tag (gtag.js) -
+	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXRYLY2J11"></script>
 	<script>
 	window.dataLayer = window.dataLayer || [];
