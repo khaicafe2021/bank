@@ -728,7 +728,7 @@
                                     <a id='PTFBank' href="https://mpl.mfast.vn/ptf/onboarding?saleCode=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">PTF-BANK</span>
                                         <br>
-                                        <img src="./image/imagebank/pft.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <img src="./image/imagebank/ptf.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
                                         <br>
                                         <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
                                     </a>
@@ -1330,14 +1330,14 @@
                 })
                 
                 $('.needle').css('transform', `rotate(${phantram}deg)`)
-            }, 1000)
+            }, 100)
 
             setTimeout(() => {
                 $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền theo sim. Khách hàng mở tài khoản thao tác liên tục không thoát để tránh bị lỗi không cập nhật được thành công trong quá trình xử lý hồ sơ. Trường hợp bị thoát ra bắt buộc vào lại link chấm sim chọn vào ngân hàng vừa bấm để tiếp tục hoàn thành đăng ký thì hệ thống mới cập nhật được thông tin.</i>`);
                 document.getElementById('Banks').style.visibility="visible";
                 // transition: visibility 0s, opacity 0.5s linear;
                 document.getElementById('Banks').style.opacity = "1"
-            }, 3500);
+            }, 1000);
         }
         function simdacham(value) {
             // console.log('get data',value[0])
