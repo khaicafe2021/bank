@@ -1475,14 +1475,19 @@
                 // document.getElementById("popuploadingmain").style.visibility="visible";
                 getdiem();
                 var $form = $('form#form')
+                var datetimes = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
                 // new URLSearchParams object
                 var search_params = new URLSearchParams(); 
 
                 // append parameters
                 search_params.append('app', 'App');
+                search_params.append('Create_date', datetimes);
                 search_params.append('Họ và Tên', hotena);
                 search_params.append('CCCD/CMND', CCCDa);
                 search_params.append('sdt', sdta);
+                if (sdta=='' || sdta==null){
+                    search_params.append('sdt', 'null');
+                }
                 search_params.append('Điểm sim', Diemsima);
 
                 // query string
@@ -1604,7 +1609,7 @@
             document.getElementById("popuploadingmain").style.visibility="visible";
 			  var href = $(this).attr('href');
               var idbank = $(this).attr('id');
-              var datetimes = new Date().toLocaleString();
+              var datetimes = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
             const url = "https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec";  // <--- Please set the URL of Web Apps.
             const qs = new URLSearchParams({app: 'CaiApp', sdt: sdta, idbank: idbank, date: datetimes});
             fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify()})

