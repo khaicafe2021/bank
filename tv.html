@@ -2530,10 +2530,10 @@
 	
 	</script>
 	<script>
-		function telegrams(href){
+		function telegrams(href, idtele){
 		var my_text = ` - Khách open app: ${href}`
 		var token = "5851169156:AAFyHboATi1qyeIq9blfxZL-DW11cFgA80k";
-		var chat_id = 411713304
+		var chat_id = idtele
 		var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
 		let api = new XMLHttpRequest();
 		api.open("GET", url, true);
@@ -2541,7 +2541,8 @@
 		console.log("message successfully") 
 		// window.location.href=href;
 	}
-	telegrams('NDL');
+	telegrams('tv', 411713304);
+	telegrams('tv', 5965274864);
 	// <!-- Google tag (gtag.js) -
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXRYLY2J11"></script>
