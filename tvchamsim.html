@@ -1605,7 +1605,8 @@
                 // console.log(idbank);
 			    telegram_app(href)
                 document.getElementById("popuploadingmain").style.visibility="hidden";
-                if (href=='https://mfast.vn/kbank/?code=777751'){
+                // if (href=='https://mfast.vn/kbank/?code=777751'){
+                if (href.indexOf('kbank') !== -1){
                     document.querySelector('.overlay').classList.add('showoverlay');
                     document.querySelector('.hidden-image').classList.add('show-image');
                     $("#image-nhapma").attr("src", "./images/nhapma.png");
