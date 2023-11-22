@@ -739,6 +739,27 @@
                                         <br>
                                         <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
                                     </a>
+                                    <a id='MBBank' href="https://mfast.vn/mb_share?code=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">MBBANK</span>
+                                        <br>
+                                        <img src="./image/imagebank/mbbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
+                                     <a id='VPBank' href="https://mfast.vn/vpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">VPBANK</span>
+                                        <br>
+                                        <img src="./image/imagebank/vpbanka.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
+                                    <a id='KBank' href="https://mfast.vn/shinhan/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
+                                        <span style="font-size: large;">SHIHAN</span>
+                                        <br>
+                                        <img src="./image/imagebank/shinhan.png" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
+                                        <br>
+                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
+                                    </a>
                                     <!-- <a id='KBank' href="https://mfast.vn/kbank/?code=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">KBANK</span>
                                         <br>
@@ -772,24 +793,11 @@
                                             tối đa 20 triệu đồng
                                             Áp dụng cho khách hàng có CCCD gắn chip và sim chính chủ</span>
                                     </a> -->
-                                    <a id='VPBank' href="https://mfast.vn/vpbank/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
-                                        <span style="font-size: large;">VPBANK</span>
-                                        <br>
-                                        <img src="./image/imagebank/vpbanka.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-                                        <br>
-                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
-                                    </a>
+                                   
                                     <a id='CakeBank' href="https://mfast.vn/cake/777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
                                         <span style="font-size: large;">CAKE BANK</span>
                                         <br>
                                         <img src="./image/imagebank/cakebank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
-                                        <br>
-                                        <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
-                                    </a>
-                                    <a id='MBBank' href="https://mfast.vn/mb_share?code=777751" class="button" style="background: green;border-radius:20px;box-shadow: -5px 5px 5px rgba(0,0,0,0.3);width: 350px;">
-                                        <span style="font-size: large;">MBBANK</span>
-                                        <br>
-                                        <img src="./image/imagebank/mbbank.jpg" style="border-radius: 20px; width: 100px; height: 100px; margin-bottom:20px; text-align: center;"/>
                                         <br>
                                         <span style="font-size: large;">MỞ TÀI KHOẢN VAY SIM MIỄN PHÍ</span>
                                     </a>
@@ -1664,7 +1672,16 @@
                     hrefbank = href
                     window.localStorage.setItem('App', 'open')
                     App_open ='open'  
-                    console.log('kbank');
+                    console.log('MBBank');
+                } else if (href="https://mfast.vn/shinhan/777751"){
+                    document.querySelector('.overlay').classList.add('showoverlay');
+                    document.querySelector('.hidden-image').classList.add('show-image');
+                    $("#image-nhapma").attr("src", "./image/imagebank/shihancode.jpg");
+                    $('#noidungnhapma').html(`Cài App đến bước này Khách click đăng kí`);
+                    hrefbank = href
+                    window.localStorage.setItem('App', 'open')
+                    App_open ='open'  
+                    console.log('VPBank');
                 }else if (href=='https://thutucvay.com/dangky'){
                     // console.log('dangki');
                     if (App_open==''|| App_open==null){
