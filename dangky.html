@@ -431,7 +431,7 @@
                    <input type="number" class="input" name="CCCD/CMND" id="CCCD">
                 </div> 
                 <div class="inputfield">
-                    <label>CMND cũ ( nếu có )</label>
+                    <label>CMND cũ ( Gỉai quyết nhu cầu tài chính của bạn ngay  )</label>
                     <input type="number" class="input" name="CMND Cũ" id="CMND">
                  </div> 
                  <div class="inputfield">
@@ -805,12 +805,12 @@
         <script src="js/mobiscroll.js"></script>
 
         <script>
-            var sdta = localStorage.getItem('sdt');
-            if ((sdta=='')||(sdta==null) || (sdta=='null')){
-			   console.log('welcome')
-		    }else{
-                window.location.href = 'https://thutucvay.com/chamsim'
-            }
+            // var sdta = localStorage.getItem('sdt');
+            // if ((sdta=='')||(sdta==null) || (sdta=='null')){
+			//    console.log('welcome')
+		    // }else{
+            //     window.location.href = 'https://thutucvay.com/chamsim'
+            // }
             var datetimes = new Date().toLocaleString("vi-VN", {timeZone: "Asia/Ho_Chi_Minh"});
             document.getElementById("Create_date").value = datetimes;
             // mobiscroll.datepicker('#ngaysinh', {
@@ -914,7 +914,8 @@
                                 localStorage.setItem('CCCD', CCCD)
                                 
                                 alert("Gửi hồ sơ thành công quý khách vui lòng đợi thẩm định hồ sơ!");
-                                location.href = 'https://thutucvay.com/chamsim'
+                                // location.href = 'https://thutucvay.com/chamsim'
+                                location.href = 'https://thutucvay.com'
                             }
                         })
                 
